@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(fonts/Noto-Sans/NotoSans-Bold.ttf);
+}
+
+::selection {
+    background-color: #444;
+    color: white;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans';
+    background-color: #010101;
+    color: #eee;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header>section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+    filter: invert(0.3);
+}
+
+.lib-icon{
+    width: 35px;
+    height: 35px;
+    filter: invert(0.3);
+}
+
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 85vh;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}   
+
+.question-container>nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.question-description>h4 {
+    margin: 5px 0;
+}
+
+.question-description>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+    text-align: left;
+    font-family: 'Monospace', monospace;
+    color: #fff;
+    box-shadow: 0 0 10px inset rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+}
+
+.example::before {
+    content: "user@endpoint:~$ ";
+    color: #26A269;
+    font-weight: bold;
+
+}
+
+button {
+    padding: 10px 20px;
+    width: 150px;
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.red {
+    background-color: #dc3545;
+}
+
+.yellow {
+    background-color: #d1aa35;
+}
+
+.green {
+    background-color: #28a745;
+}
+
+.welcome-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-message>button {
+    width: 100%;
+    background-color: #444;
+}
+
+.library{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.library>h1 {
+    margin: 20px 0;
+}
+
+.library>h2 {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    margin: var(--main-margin-xxs);
+    cursor: pointer;
+    width: 90%;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    background-color: var(--main-background-karte);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+summary>section{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+details[open] {
+    padding: 0.5em;
+    background-color: var(--main-background-karte);
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+}
+
+.favorites-button{
+    background: none;
+    width: fit-content;
+    font-weight: normal;
+    font-size: normal;
+    padding: 0;
+    font-family: 'Noto Sans';
+}

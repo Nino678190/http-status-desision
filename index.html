@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale=1.0">
+        <meta name="keywords" content="HTTP, status codes, web development, error codes, server responses">
+        <meta name="description" content="Find the right HTTP status code for your needs.">
+        <meta name="author" content="Nino678190">
+        <base href="index.html">
+        <meta name="robots" content="index">
+        <meta name="robots" content="follow">
+        <meta name="copyright" content="Copyrightname">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+        <script src="script.js"></script>
+        <title>
+            HTTP Status Codes - Nino678190's Guide
+        </title>
+    </head>
+
+    <body>
+        <header>
+            <section>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="header-logo">
+                </a>
+            </section>
+            <section>
+                <a href="https://github.com/nino678190/http-status-desision" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-mark.png" alt="GitHub" class="header-icon">
+                </a>
+                <a href="library.html">
+                    <img src="images/book-open-icon.png" alt="Library" class="header-icon">
+                </a>
+                <a href="favorites.html">
+                    <img src="images/star-empty-icon.png" alt="Favorites" class="header-icon">
+                </a>
+            </section>
+        </header>
+        <noscript>Please activate JavaScript so this Website works normaly</noscript>
+        <main class="index">
+            <section class="question-container">
+                <h2 id="question">This is a question</h2>
+
+                <section class="question-description">
+                    <h4>Examples</h4>
+                    <ul>
+                        <li class="example">A User did a bad request</li>
+                        <li class="example">Something went wrong</li>
+                        <li class="example">Some Task fucked up</li>
+                    </ul>
+                </section>
+                <nav>
+                    <button class="answer green">Yes</button>
+                    <button class="answer yellow">Maybe</button>
+                    <button class="answer red">No</button>
+                </nav>
+            </section>
+        </main>
+    </body>
+    <script>
+        const firstVisit = localStorage.getItem('firstVisit');
+        if (!firstVisit) {
+            localStorage.setItem('firstVisit', 'true');
+            const welcomeMessage = document.createElement('section');
+            welcomeMessage.className = 'welcome-message';
+            welcomeMessage.innerHTML = `
+                <h2>Welcome to the HTTP Status Codes Guide!</h2>
+                <p>Here you can find the right HTTP status code for your needs.</p>
+                <h3>How to use this guide:</h3>
+                <ul>
+                    <li>Click on the question to see examples.</li>
+                    <li>Use the buttons to navigate through the answers.</li>
+                    <li>Click on the icons in the header to access the library and favorites.</li>
+                </ul>
+                <h3>Hotkeys:</h3>
+                <ul>
+                    <li>Press <kbd>y</kbd> for Yes</li>
+                    <li>Press <kbd>m</kbd> for Maybe</li>
+                    <li>Press <kbd>n</kbd> for No</li>
+                </ul>
+                <button class="close-welcome">Close</button>
+            `;
+            document.body.appendChild(welcomeMessage);
+            const closeButton = welcomeMessage.querySelector('.close-welcome');
+            closeButton.addEventListener('click', () => {
+                welcomeMessage.remove();
+            });
+        }
+    </script>
+</html>
