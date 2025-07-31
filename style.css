@@ -205,3 +205,28 @@ details[open] summary {
     padding: 0;
     font-family: 'Noto Sans';
 }
+
+code{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.protocol{
+    color: #007bff;
+}
+
+.status{
+    color: #28a745;
+}
+
+.statusName{
+    color: #d1aa35;
+}
+
+.tag{
+    color: #26A269;
+}
+
+.value{
+    color: #fff;
+}
