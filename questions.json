@@ -1,0 +1,79 @@
+[
+    {
+        "questionId": 1,
+        "question": "Did something negativ happen?",
+        "examples": [
+            "A user tried to access a resource that was not found.",
+            "A request was made to a server that is currently unavailable.",
+            "A user attempted to access a resource that requires authentication but did not provide valid credentials."
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 2,
+                "statusCodes": [3, 4, 5]
+            },
+            {
+                "answer": "Maybe",
+                "nextQuestionId": 3,
+                "statusCodes": [1,3, 202]
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 4,
+                "statusCodes": [1, 2, 3]
+            }
+        ]
+    },
+    {
+        "questionId": 2,
+        "question": "Is the request valid?",
+        "examples": [
+            "A user tried to access a resource that does not exist.",
+            "A request was made with invalid parameters."
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 5,
+                "statusCodes": [3,5]
+            },
+            {
+                "answer": "Maybe",
+                "nextQuestionId": 6,
+                "statusCodes": [3]
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 7,
+                "statusCodes": [4]
+            }
+        ]
+    },
+    {
+        "questionId": 3,
+        "question": "Is the response a information?",
+        "examples": [
+            "The response is informing the client of a diffrerent protocol.",
+            "A request was made to a server that is currently waiting for a response from another server.",
+            "The response is a informational response indicating that the request was received and is being processed."
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 8,
+                "statusCodes": [1]
+            },
+            {
+                "answer": "Maybe",
+                "nextQuestionId": 9,
+                "statusCodes": [202]
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 10,
+                "statusCodes": [3]
+            }
+        ]
+    }
+]

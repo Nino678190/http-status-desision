@@ -245,6 +245,16 @@ code{
     color: #fff;
 }
 
+.deprecated {
+    color: #c51818;
+}
+
+.double{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
 @media screen and (max-width: 340px) {
     .header-icon {
         width: 40px;
