@@ -97,7 +97,6 @@
                         (mdn Web Docs)
                     </a>
                 </h4>
-
                 <p>
                     <code>
                         <span class="protocol">HTTP/1.1</span> <span class="status">102</span> <span class="statusName">Processing</span><br>
@@ -109,7 +108,7 @@
                     <section>103 - Early Hints</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Status Code gives an early hint to the user, so the client can preconnet/preload a ressource</p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -118,9 +117,8 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">HTTP/1.1 </span><span class="status">103 </span><span class="statusName">Early Hint</span><br>
+                        <span class="tag">Link</span>: <span class="value">&lt;https://cdn.example.com&gt;; rel=preconnect, &lt;https://cdn.example.com&gt;; rel=preconnect; crossorigin</span><br>
                     </code>
                 </p>
             </details>
@@ -130,7 +128,7 @@
                     <section>200 - Ok</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Status Code indicates a request succeded. The response can give back Information.</p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -139,9 +137,18 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">HTTP/1.1</span><span class="status"> 200</span><span class="statusName">OK</span><br>
+                        <span class="tag">Accept-Ranges</span>: <span class="value">bytes</span><br>
+                        <span class="tag">Age</span>: <span class="value">294510</span><br>
+                        <span class="tag">Cache-Control</span>: <span class="value">max-age=604800</span><br>
+                        <span class="tag">Content-Type</span>: <span class="value">text/html; charset=UTF-8</span><br>
+                        <span class="tag">Date</span>: <span class="value">Fri, 21 Jun 2024 14:18:33 GMT</span><br>
+                        <span class="tag">Etag</span>: <span class="value">"3147526947"</span><br>
+                        <span class="tag">Expires</span>: <span class="value">Fri, 28 Jun 2024 14:18:33 GMT</span><br>
+                        <span class="tag">Last-Modified</span>: <span class="value">Thu, 17 Oct 2019 07:18:26 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">ECAcc (nyd/D10E)</span><br>
+                        <span class="tag">X-Cache</span>: <span class="value">HIT</span><br>
+                        <span class="tag">Content-Length</span>: <span class="value">1256</span>
                     </code>
                 </p>
             </details>
@@ -150,7 +157,7 @@
                     <section>201 - Created</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This status Code indicates that a ressource was created. This could be a user, a form Input, etc. </p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/201" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -159,9 +166,9 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">POST</span><span class="status"> 201</span><span class="statusName"> Created</span><br>
+                        <span class="tag">Host</span>: <span class="value">example.com</span><br>
+                        <span class="tag">Content-Type</span>: <span class="value">application/json</span>
                     </code>
                 </p>
             </details>
@@ -1268,6 +1275,8 @@
                     </code>
                 </p>
             </details>
+
+            <p class="passiv"><b>Note: </b>The "Code" Examples are under the License of the Mozilla Foundation from <a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">MDN web docs</a>.</p>
         </main>
     </body>
 </html>

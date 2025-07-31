@@ -255,6 +255,12 @@ code{
     gap: 5px;
 }
 
+.passiv{
+    color: #ccc;
+    font-size: smaller;
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 340px) {
     .header-icon {
         width: 40px;
