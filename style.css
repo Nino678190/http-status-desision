@@ -235,3 +235,14 @@ code{
 .value{
     color: #fff;
 }
+
+@media screen and (max-width: 300px) {
+    .header-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .header-logo{
+        width: 50px;
+        height: 50px;
+    }
+}
