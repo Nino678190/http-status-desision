@@ -70,6 +70,12 @@ header>section {
     margin-bottom: 20px;
 }
 
+.question-container>h2{
+    text-wrap: wrap;
+    max-width: 90vw;
+    text-align: center;
+}
+
 .question-description{
     display: flex;
     flex-direction: column;
@@ -81,6 +87,8 @@ header>section {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .question-description>h4 {
@@ -94,7 +102,8 @@ header>section {
     background-color: #000;
     border-radius: 5px;
     padding: 10px;
-    width: 500px;
+    max-width: 500px;
+    width: 90vw;
     text-align: left;
     font-family: 'Monospace', monospace;
     color: #fff;
@@ -236,7 +245,7 @@ code{
     color: #fff;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 340px) {
     .header-icon {
         width: 40px;
         height: 40px;
@@ -245,4 +254,8 @@ code{
         width: 50px;
         height: 50px;
     }
+    .answer{
+        width: 90vw;
+    }
+
 }
