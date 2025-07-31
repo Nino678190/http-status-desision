@@ -177,7 +177,10 @@
                     <section>202 - Accepted</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>
+                    The Status Code indicates that the request is being processed but it is not guaranteed the request will be successful. 
+                    It comes often with a response body to track the progress
+                </p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/202" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -186,9 +189,9 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">HTTP/1.1</span><span class="status"> 202 </span><span class="statusName"> Accepted</span><br>
+                        <span class="tag">Date</span>: <span class="value">Wed, 26 Jun 2024 12:00:00 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">Nginx 1.28.0</span>
                     </code>
                 </p>
             </details>
@@ -197,7 +200,7 @@
                     <section>203 - Non-Authoritative Information</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>The Status Code informs the user, that the original request succeded but the response was changed by a proxy like malware-filtering, etc.</p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/203" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -206,9 +209,9 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">HTTP/1.1 </span><span class="status">203 </span><span class="statusName">Non-Authoritative Information</span><br>
+                        <span class="tag">Server</span>: <span class="value">Nginx 1.29.0</span><br>
+                        <span class="tag">Content-Length</span>: <span class="value">1234</span>
                     </code>
                 </p>
             </details>
@@ -217,7 +220,7 @@
                     <section>204 - No Content</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This status code informs the user that their request succeded, but no action on the client side is required. This is used in cases where something was changed or deleted.</p>
                 <h4>Example 
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/204" target="_blank" rel="noopener noreferrer">
                         (mdn Web Docs)
@@ -226,9 +229,9 @@
 
                 <p>
                     <code>
-                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
-                        <span class="tag"></span>: <span class="value"></span><br>
-                        <span class="tag"></span>: <span class="value"></span>
+                        <span class="protocol">HTTP/1.1</span> <span class="status">204</span> <span class="statusName">No Content</span><br>
+                        <span class="tag">Date</span>: <span class="value">Wed, 26 Jun 2024 12:00:00 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">Apache/2.4.1 (Unix)</span>
                     </code>
                 </p>
             </details>
