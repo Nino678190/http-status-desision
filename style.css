@@ -8,6 +8,11 @@
     color: white;
 }
 
+a{
+    color: #eee;
+    text-decoration: underline;
+}
+
 body{
     height: 100vh;
     margin: 0;
@@ -212,19 +217,19 @@ code{
 }
 
 .protocol{
-    color: #007bff;
+    color: #f39199;
 }
 
 .status{
-    color: #28a745;
+    color: #00d061;
 }
 
 .statusName{
-    color: #d1aa35;
+    color: #00d061;
 }
 
 .tag{
-    color: #26A269;
+    color: #3e77fd;
 }
 
 .value{
