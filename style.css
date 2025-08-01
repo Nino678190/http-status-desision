@@ -211,6 +211,10 @@ details[open] summary {
     margin-bottom: 0.5em;
 }
 
+details[open]:not(summary){
+    cursor: text;
+}
+
 .favorites-button{
     background: none;
     width: fit-content;
