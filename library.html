@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="HTTP, status codes, web development, error codes, server responses">
         <meta name="description" content="Find the right HTTP status code for your needs.">
         <meta name="author" content="Nino678190">
         <base href="index.html">
         <meta name="robots" content="index">
         <meta name="robots" content="follow">
-        <meta name="copyright" content="Copyrightname">
+        <meta name="copyright" content="Nino678190">
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
         <script src="script.js"></script>
@@ -83,7 +83,6 @@
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
                 <p>This Status Code indicates a request succeded. The response can give back Information.</p>
-
             </details>
             <details>
                 <summary>
@@ -108,7 +107,6 @@
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
                 <p>The Status Code informs the user, that the original request succeded but the response was changed by a proxy like malware-filtering, etc.</p>
-    
             </details>
             <details>
                 <summary>
@@ -144,15 +142,16 @@
                     <section>208 - Already Reported</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Status Code is used <u>only</u> in the context of WebDAV. It is used with <code>207</code> to shorten the response, if one ressource is requested from multiple paths.</p>
             </details>
             <details>
                 <summary>
                     <section>226 - IM Used</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                
+                <p><span class="deprecated">Note: </span> Has poor support(only a few implementations)<br>
+                    This Status Code is used, if the user has a version of a ressource, that is not the latest version. The server will then return the latest version of the ressource, but only the changes to the ressource, not the whole ressource.
+                </p>
             </details>
             <h2>3xx Status Codes - Redirect</h2>
             <details>
@@ -160,53 +159,59 @@
                     <section>300 - Multiple Choises</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Status Code is used to give the user-agent a list of possible requests, like a website in multiple languages. The user agent could choose one option but most agents lack this skill</p>
             </details>
             <details>
                 <summary>
                     <section>301 - Moved Permanently</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p><span class="deprecated">Note: </span>This should only be used with <code>GET</code>-requests, as the method changes to <code>GET</code>. <br>This Status Code informs the user, that the ressource has a new location. The browser will automaticly follow the response to the new location.</p>
             </details>
             <details>
                 <summary>
                     <section>302 - Found</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p><span class="deprecated">Note: </span>This should only be used with <code>GET</code>-requests, as the method often changes to <code>GET</code>. <br>
+                    This Status Code informs the user, that the ressource they requested has been moved temporarly to a new location. The browser will automaticly follow the response to the new location.
+                </p>
             </details>
             <details>
                 <summary>
                     <section>303 - See other</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>The Status Code informs the user, that the request was successful but to see changes they need to do a <code>GET</code> Request.</p>
             </details>
             <details>
                 <summary>
                     <section>304 - Not Modified</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                
+                <p>The Status Code informs the user, that nothing has changed since the last request, so there is no need to retransmit the ressource.</p>
             </details>
             <details>
                 <summary>
                     <section>307 - Temporary Redirect</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p>
+                    This Status Code informs the user, that the ressource they requested has been moved temporarly to a new location. The
+                    browser will automaticly follow the response to the new location.
+                    <br><span class="deprecated">Note: </span> Request Body and Method are preserved.
+                </p>
             </details>
             <details>
                 <summary>
                     <section>308 - Permanent Redirect</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>
+                    This Status Code informs the user, that the ressource has a new location. The browser will automaticly follow the
+                    response to the new location.
+                    <br><span class="deprecated">Note: </span> Request Body and Method are preserved.
+                </p>
                 
             </details>
             <h2>4xx Status Codes - Client Error</h2>
