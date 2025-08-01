@@ -212,7 +212,6 @@
                     response to the new location.
                     <br><span class="deprecated">Note: </span> Request Body and Method are preserved.
                 </p>
-                
             </details>
             <h2>4xx Status Codes - Client Error</h2>
             <details>
@@ -221,7 +220,6 @@
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
                 <p>This Status Code is used to notify the user, that their request could be processed, which is typiclly due malformed or invalid syntax.</p>
-
             </details>
             <details>
                 <summary>
@@ -229,7 +227,6 @@
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
                 <p>This Code is used to inform, that for this requested action, there needs to be some kind of authentication.</p>
-
             </details>
             <details>
                 <summary>
@@ -265,7 +262,6 @@
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
                 <p>This means, that the Server couldn't respond with a matching ressource for proactive content headers like: <code>Accept, Accept-Ancoding or Accept-Language</code></p>
-
             </details>
             <details>
                 <summary>
@@ -435,89 +431,80 @@
                     <section>500 - Internal server error</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p>This Status Code is a generic Code to respond to the client that some task on the server failed.</p>
             </details>
             <details>
                 <summary>
                     <section>501 - Not implemented</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                 
+                <p>This Code means that the server doesn't have the functionality to fullfill the request.</p>
             </details>
             <details>
                 <summary>
                     <section>502 - Bad Gateway</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p>This Status Code indicates that some server acting as Gateway or Proxy recieved a invalid response</p>
             </details>
             <details>
                 <summary>
                     <section>503 - Service Unavailable</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
-                 
+                <p>This indicated that the Server is unavailable. This could be due to updates or overload.</p>
             </details>
             <details>
                 <summary>
                     <section>504 - Gateway Timeout</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-
+                <p>This Status Code indicates that a server acting as Gateway or Proxy couldn't responde in a certain time</p>
             </details>
             <details>
                 <summary>
                     <section>505 - HTTP Version not Supported</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                 
+                <p>This Status Code indicates that the HTTP Version used in the request isn't supported by the server. This could be due to a incorrectly setup of a loadbalancer.</p>
             </details>
             <details>
                 <summary>
                     <section>506 - Variant also negotiates</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                
+                <p>This Code is send if the server selected some ressource which is excluded in the request.</p>
             </details>
             <details>
                 <summary>
                     <section>507 - Insufficient Storage</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                
+                <p>This Status Code is send due to internal limits of storge. This issue can be temporarly.</p>
             </details>
             <details>
                 <summary>
                     <section>508 - Loop detected</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
-                
+                <p>This Code is returned if the server detects, that the request created a endless loop</p>
             </details>
             <details>
                 <summary>
                     <section>510 - Not extended</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Code is returned if the server doesn'z have enough Information to fullfill the request due to a missing Extension.</p>
             </details>
             <details>
                 <summary>
                     <section>511 - Network Authentication Required</section>
                     <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
                 </summary>
-                <p></p>
+                <p>This Status Code is responded by a proxy where some kind of authentication is needed, so the request can be sent to the server.</p>
         
             </details>
+            <p class="passiv">Some of the information comes from <a href="http://" target="_blank" rel="noopener noreferrer">MDN Docs</a>. All Status Code are exsplained simple. I can't guarante, that everything is correct.</p>
         </main>
     </body>
 </html>
