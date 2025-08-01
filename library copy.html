@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale=1.0">
+        <meta name="keywords" content="HTTP, status codes, web development, error codes, server responses">
+        <meta name="description" content="Find the right HTTP status code for your needs.">
+        <meta name="author" content="Nino678190">
+        <base href="index.html">
+        <meta name="robots" content="index">
+        <meta name="robots" content="follow">
+        <meta name="copyright" content="Copyrightname">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+        <script src="script.js"></script>
+        <title>
+            HTTP Status Codes - Nino678190's Guide
+        </title>
+    </head>
+    <body>
+        <header>
+            <section>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="header-logo">
+                </a>
+            </section>
+            <section>
+                <a href="https://github.com/nino678190/http-status-desision" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-mark.png" alt="GitHub" class="header-icon">
+                </a>
+                <a href="library.html">
+                    <img src="images/book-open-icon.png" alt="Library" class="header-icon">
+                </a>
+                <a href="favorites.html">
+                    <img src="images/star-empty-icon.png" alt="Favorites" class="header-icon">
+                </a>
+            </section>
+        </header>
+        <noscript>Please activate JavaScript so this Website works normaly</noscript>
+        <main class="library">
+            <h1>HTTP Status Codes Library</h1>
+            <h2>1xx Status Codes - Informational</h2>
+            <details>
+                <summary>
+                    <section>100 - Continue</section>
+                    <section>
+                        <button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button>
+                    </section>
+                </summary>
+                <p>
+                    The Status Code indicates that the initial part of a request has been received and has not yet been rejected by
+                    the server.
+                </p>
+                <!-- <h4>Example
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/100" target="_blank"
+                        referrerpolicy="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span> <span class="status">100</span> <span class="statusName">Continue</span><br>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>101 - Switching Protocols</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>The Status Code indicates that the protocol of the server has switched.</p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/101" target="_blank" referrerpolicy="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+                
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span> <span class="status">101</span> <span class="statusName">Switching Protocols</span><br>
+                        <span class="tag">Upgrade</span>: <span class="value">websocket</span><br>
+                        <span class="tag">Connection</span>: <span class="value">Upgrade</span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section class="double">102 - Processing <span class="deprecated"> (Deprecated)</span></section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>
+                    <span class="deprecated"><b>Disclamer: </b></span>Only use this status code for compatibility purposes!<br>
+                    This status code indicates that the server has received the request and is processing it, but a response will take a longer time.
+                </p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/102" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span> <span class="status">102</span> <span class="statusName">Processing</span><br>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>103 - Early Hints</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>This Status Code gives an early hint to the user, so the client can preconnet/preload a ressource</p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1 </span><span class="status">103 </span><span class="statusName">Early Hint</span><br>
+                        <span class="tag">Link</span>: <span class="value">&lt;https://cdn.example.com&gt;; rel=preconnect, &lt;https://cdn.example.com&gt;; rel=preconnect; crossorigin</span><br>
+                    </code>
+                </p> -->
+            </details>
+            <h2>2xx Status Codes - Successful</h2>
+            <details>
+                <summary>
+                    <section>200 - Ok</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>This Status Code indicates a request succeded. The response can give back Information.</p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span><span class="status"> 200</span><span class="statusName">OK</span><br>
+                        <span class="tag">Accept-Ranges</span>: <span class="value">bytes</span><br>
+                        <span class="tag">Age</span>: <span class="value">294510</span><br>
+                        <span class="tag">Cache-Control</span>: <span class="value">max-age=604800</span><br>
+                        <span class="tag">Content-Type</span>: <span class="value">text/html; charset=UTF-8</span><br>
+                        <span class="tag">Date</span>: <span class="value">Fri, 21 Jun 2024 14:18:33 GMT</span><br>
+                        <span class="tag">Etag</span>: <span class="value">"3147526947"</span><br>
+                        <span class="tag">Expires</span>: <span class="value">Fri, 28 Jun 2024 14:18:33 GMT</span><br>
+                        <span class="tag">Last-Modified</span>: <span class="value">Thu, 17 Oct 2019 07:18:26 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">ECAcc (nyd/D10E)</span><br>
+                        <span class="tag">X-Cache</span>: <span class="value">HIT</span><br>
+                        <span class="tag">Content-Length</span>: <span class="value">1256</span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>201 - Created</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>This status Code indicates that a ressource was created. This could be a user, a form Input, etc. </p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/201" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol">POST</span><span class="status"> 201</span><span class="statusName"> Created</span><br>
+                        <span class="tag">Host</span>: <span class="value">example.com</span><br>
+                        <span class="tag">Content-Type</span>: <span class="value">application/json</span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>202 - Accepted</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>
+                    The Status Code indicates that the request is being processed but it is not guaranteed the request will be successful. 
+                    It comes often with a response body to track the progress
+                </p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/202" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span><span class="status"> 202 </span><span class="statusName"> Accepted</span><br>
+                        <span class="tag">Date</span>: <span class="value">Wed, 26 Jun 2024 12:00:00 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">Nginx 1.28.0</span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>203 - Non-Authoritative Information</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>The Status Code informs the user, that the original request succeded but the response was changed by a proxy like malware-filtering, etc.</p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/203" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1 </span><span class="status">203 </span><span class="statusName">Non-Authoritative Information</span><br>
+                        <span class="tag">Server</span>: <span class="value">Nginx 1.29.0</span><br>
+                        <span class="tag">Content-Length</span>: <span class="value">1234</span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>204 - No Content</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p>This status code informs the user that their request succeded, but no action on the client side is required. This is used in cases where something was changed or deleted.</p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/204" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <p>
+                    <code>
+                        <span class="protocol">HTTP/1.1</span> <span class="status">204</span> <span class="statusName">No Content</span><br>
+                        <span class="tag">Date</span>: <span class="value">Wed, 26 Jun 2024 12:00:00 GMT</span><br>
+                        <span class="tag">Server</span>: <span class="value">Apache/2.4.1 (Unix)</span>
+                    </code>
+                </p>
+            </details>
+            <details>
+                <summary>
+                    <section>205 - Reset Content</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/205" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>206 - Partial Content</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/206" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>207 - Multi Status</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/207" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>208 - Already Reported</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/208" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>226 - IM Used</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/226" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <h2>3xx Status Codes - Redirect</h2>
+            <details>
+                <summary>
+                    <section>300 - Multiple Choises</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/300" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>301 - Moved Permanently</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/301" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>302 - Found</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/302" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>303 - See other</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/303" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>304 - Not Modified</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/304" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>307 - Temporary Redirect</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/307" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>308 - Permanent Redirect</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/308" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <h2>4xx Status Codes - Client Error</h2>
+            <details>
+                <summary>
+                    <section>400 - Bad Request</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/400" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>401 - Unauthorized</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>402 - Payment Required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>403 - Forbidden</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>404 - Not Found</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>405 - Method not allowed</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/405" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>406 - Not acceptable</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/406" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>407 - Proxy Authentication required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/407" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>408 - Request Timeout</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/408" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>409 - Conflict</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/409" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>410 - Gone</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/410" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>411 - Length required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/411" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>412 - Precondition failed</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/412" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>413 - Content too large</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/413" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>414 - URI too long</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/414" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>415 - Unsupported Media Type</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/415" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>416 - Range not Satisfiable</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/416" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>417 - Expectation failed</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/417" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>418 - I'm a teapot</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>421 - Misdirected request</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/421" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>422 - Unprocessable content</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>423 - Locked</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/423" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>424 - Failed Dependency</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/424" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>425 - Too Early</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/425" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>426 - Update required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/426" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>428 - Precondition required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/428" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>429 - Too many requests</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/429" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>431 - Request header fields too large</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/431" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>451 - Unavailable for legal reasons</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/451" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <h2>5xx Status Codes - Server Error</h2>
+            <details>
+                <summary>
+                    <section>500 - Internal server error</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p>-->
+            </details>
+            <details>
+                <summary>
+                    <section>501 - Not implemented</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/501" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>502 - Bad Gateway</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/502" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>503 - Service Unavailable</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/503" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>504 - Gateway Timeout</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/504" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>505 - HTTP Version not Supported</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/505" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>506 - Variant also negotiates</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/506" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>507 - Insufficient Storage</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/507" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>508 - Loop detected</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/508" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>510 - Not extended</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/510" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+            <details>
+                <summary>
+                    <section>511 - Network Authentication Required</section>
+                    <section><button class="favorites-button"><img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"></button></section>
+                </summary>
+                <p></p>
+                <!-- <h4>Example 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/511" target="_blank" rel="noopener noreferrer">
+                        (mdn Web Docs)
+                    </a>
+                </h4> -->
+
+                 <!-- <p>
+                    <code>
+                        <span class="protocol"></span><span class="status"></span><span class="statusName"></span><br>
+                        <span class="tag"></span>: <span class="value"></span><br>
+                        <span class="tag"></span>: <span class="value"></span>
+                    </code>
+                </p> -->
+            </details>
+
+            <p class="passiv"><b>Note: </b>The "Code" Examples are under the License of the Mozilla Foundation from <a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">MDN web docs</a>.</p>
+        </main>
+    </body>
+</html>
