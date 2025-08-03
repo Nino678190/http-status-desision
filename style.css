@@ -281,6 +281,11 @@ code{
     margin-top: 20px;
 }
 
+.star{
+    font-size: 40px;
+    color: #ccc;
+}
+
 @media screen and (max-width: 340px) {
     .header-icon {
         width: 40px;

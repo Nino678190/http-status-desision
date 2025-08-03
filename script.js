@@ -68,14 +68,45 @@ function loadStatus() {
                             <section class="${status.deprecated ? 'double' : ''}"> ${status.code} - ${status.name}</section>
                             <section>
                                 <button class="favorites-button" onclick="addToFavorites('${status.code}')">
-                                    <img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon">
+                                    <!-- <img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"> -->
+                                    <span class="star">&#9734;</span>
                                 </button>
                             </section>
                         </summary>
                         <p>${status.description}</p>
                     `;
+                
+                if (status.requestExample && responseExample) {
+                    const headers = Object.entries(status.requestExample.headers)
+                        .map(([key, value]) => `<span class="header">${key}: ${value}</span>`)
+                        .join('<br>');
+                    const responseHeaders = Object.entries(status.responseExample.headers)
+                        .map(([key, value]) => `<span class="header">${key}: ${value}</span>`)
+                        .join('<br>');
+                    const body = status.requestExample.body ? `<span class="body">${status.requestExample.body}</span>` : '';
+                    statusElement.innerHTML += `
+                        <section class="example">
+                            <h3>Request Example:</h3>
+                            <code>
+                                <span class="protocol">${status.method}</span> <span class="url">${status.url}</span> HTTP/1.1<br>
+                                Host: <span class="host">example.com</span><br>
+                                ${headers ? `<br>${headers}`: ''}
+                                ${body ? `<br>${body}` : ''}
+                            </code>
+                            <h3>Response Example:</h3>
+                            <code>
+                                HTTP/1.1 ${status.code} ${status.name}<br>
+                                ${headers ? `<br>${responseHeaders}` : ''}
+                                ${status.responseExample.body ? `<br><span class="body">${status.responseExample.body}</span>` : ''}
+                            </code>
+                        </section>
+                    `
+                }
                 statusContainer.appendChild(statusElement);
             });
         })
         .catch(error => console.error('Error loading status codes:', error));
 } 
+
+// &#9733; Filled star icon
+// &#9734; Empty star icon
