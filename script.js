@@ -67,7 +67,7 @@ async function loadStatus(isFav = false) {
     }
     const deprecatedNote = '<span class="deprecated"> (Deprecated)</span>';
     const deprecatedMessage = '<span class="deprecated"><b>Disclamer: </b></span>This status code is deprecated and should only be used for compatibility purposes.';
-    await fetch('./codes.json')
+    await fetch('/codes.json')
         .then(response => response.json())
         .then(data => {
             if (isFav) {
@@ -160,7 +160,7 @@ async function loadStatus(isFav = false) {
 async function loadQuestions(questionId) {
     try {
         if (localStorage.getItem('quest') !== null) {
-            const response = await fetch('./questions.json'); // Ensure the correct relative path
+            const response = await fetch('/questions.json'); // Ensure the correct relative path
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
