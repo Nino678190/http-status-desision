@@ -11,17 +11,17 @@
             {
                 "answer": "Yes",
                 "nextQuestionId": 2,
-                "statusCodes": [3, 4, 5]
+                "statusCodes": "[3, 4, 5]"
             },
             {
                 "answer": "Maybe",
                 "nextQuestionId": 3,
-                "statusCodes": [1,3, 202]
+                "statusCodes": "[1,3, 202]"
             },
             {
                 "answer": "No",
                 "nextQuestionId": 4,
-                "statusCodes": [1, 2, 3]
+                "statusCodes": "[1, 2, 3]"
             }
         ]
     },
@@ -36,17 +36,17 @@
             {
                 "answer": "Yes",
                 "nextQuestionId": 5,
-                "statusCodes": [3,5]
+                "statusCodes": "[3,5]"
             },
             {
                 "answer": "Maybe",
                 "nextQuestionId": 6,
-                "statusCodes": [3]
+                "statusCodes": "[3]"
             },
             {
                 "answer": "No",
                 "nextQuestionId": 7,
-                "statusCodes": [4]
+                "statusCodes": "[4]"
             }
         ]
     },
@@ -62,17 +62,17 @@
             {
                 "answer": "Yes",
                 "nextQuestionId": 8,
-                "statusCodes": [1]
+                "statusCodes": "[1]"
             },
             {
                 "answer": "Maybe",
                 "nextQuestionId": 9,
-                "statusCodes": [202]
+                "statusCodes": "[202]"
             },
             {
                 "answer": "No",
                 "nextQuestionId": 10,
-                "statusCodes": [3]
+                "statusCodes": "[3]"
             }
         ]
     }

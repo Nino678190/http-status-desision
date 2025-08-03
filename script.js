@@ -107,10 +107,11 @@ async function loadStatus(isFav = false) {
                 }
                 let starClass = isFavorite ? 'star filled' : 'star empty';
                 let starIcon = isFavorite ? '&#9733;' : '&#9734;';
-
+                
                 const statusElement = document.createElement('details');
+                statusElement.id = status.code; 
                 statusElement.innerHTML = `
-                        <summary id="${status.code}">
+                        <summary>
                             <section class="${status.deprecated ? 'double' : ''}"> ${status.code} - ${status.name}</section>
                             <section>
                                 <button class="favorites-button" onclick="addToFavorites('${status.code}')">
@@ -156,14 +157,16 @@ async function loadStatus(isFav = false) {
         .catch(error => console.error('Error loading status codes:', error));
 } 
 
-async function loadQuestions(questionId = 0) {
+async function loadQuestions(questionId) {
     try {
-        const response = await fetch('questions.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (localStorage.getItem('quest') !== null) {
+            const response = await fetch('questions.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const questData = await response.json();
+            localStorage.setItem('quest', JSON.stringify(questData));
         }
-        const questData = await response.json();
-        localStorage.setItem('quest', JSON.stringify(questData));
     } catch (error) {
         createToast('Failed to load questions.json', 'fail');
         console.error('Error loading questions.json:', error);
@@ -173,7 +176,6 @@ async function loadQuestions(questionId = 0) {
         createToast('Failed to load questions.json', 'fail');
         return;
     }
-    localStorage.setItem('questID', questionId);
     const questDataRaw = localStorage.getItem('quest');
     if (!questDataRaw) {
         createToast('Questions data is missing or invalid.', 'fail');
@@ -182,7 +184,7 @@ async function loadQuestions(questionId = 0) {
     let questData;
     try {
         questData = JSON.parse(questDataRaw);
-        questData = questData[questionId]
+        questData = questData[questionId - 1];
     } catch (error) {
         createToast('Failed to parse questions data.', 'fail');
         console.error('Error parsing questions data:', error);
@@ -198,15 +200,15 @@ async function loadQuestions(questionId = 0) {
             <section class="question-description">
                 <h4>Examples</h4>
                 <ul>
-                    <li class="example">${questData.examples[0]}</li>
-                    <li class="example">${questData.examples[1]}</li>
-                    <li class="example">${questData.examples[2]}</li>
+                    <li class="example">${questData.examples[0]}</li><br>
+                    <li class="example">${questData.examples[1]}</li><br>
+                    <li class="example">${questData.examples[2]}</li><br>
                 </ul>
             </section>
             <nav>
-                <button class="answer green" onclick="loadQuestions(${questData.answers[0].nextQuestionId})">Yes</button>
-                <button class="answer yellow" onclick="loadQuestions(${questData.answers[1].nextQuestionId})">Maybe</button>
-                <button class="answer red" onclick="loadQuestions(${questData.answers[2].nextQuestionId})">No</button>
+                <button class="answer green" onclick="loadQuestions(${questData.answers[0].nextQuestionId}); whichCodes(${questData.answers[0].statusCodes})">Yes</button>
+                <button class="answer yellow" onclick="loadQuestions(${questData.answers[1].nextQuestionId}); whichCodes(${questData.answers[1].statusCodes})">Maybe</button>
+                <button class="answer red" onclick="loadQuestions(${questData.answers[2].nextQuestionId}); whichCodes(${questData.answers[2].statusCodes})">No</button>
             </nav>
         `;
     document.querySelector('main').appendChild(container);
@@ -232,4 +234,42 @@ function displayResult(code1, code2 = null, code3 = null){
     `;
     doc.appendChild(container);
 
+}
+
+function whichCodes(codes) {
+    if (localStorage.getItem('quest') === 0){
+        if (localStorage.getItem('codes') !== null) {
+            localStorage.removeItem('codes');
+        }
+    }
+    if (codes.length === 0) {
+        createToast('No status codes available for this path.', 'info');
+        return;
+    }
+    const codeMapping = {
+        1: [100, 101, 102, 103],
+        2: [200, 201, 202, 203, 204, 205, 206, 207, 208, 226],
+        3: [300, 301, 302, 303, 304, 305, 306, 307, 308],
+        4: [400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451],
+        5: [500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511]
+    };
+
+    let possibleCodes = [];
+
+    codes.forEach(code => {
+        if (codeMapping[code]) {
+            possibleCodes.push(...codeMapping[code]);
+        } else if (code > 99 && code < 600) {
+            possibleCodes.push(code);
+        }
+    });
+
+    if (possibleCodes.length === 0) {
+        createToast('No status codes available for this path.', 'info');
+        return;
+    }
+    if (possibleCodes.length === 1) {
+        displayResult(possibleCodes);
+    }
+    localStorage.setItem('codes', JSON.stringify(possibleCodes));
 }
