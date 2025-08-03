@@ -14,7 +14,7 @@ a{
 }
 
 body{
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans';
@@ -152,6 +152,7 @@ button {
     height: 100dvh;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
 }
 
 .welcome-message>button {
