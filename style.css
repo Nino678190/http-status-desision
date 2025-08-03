@@ -149,6 +149,7 @@ button {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
+    height: 100dvh;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -297,6 +298,12 @@ code{
 
 .filled{
     color: #f1c40f;
+}
+
+@media screen and (max-width: 676px){
+    .welcome-message{
+        width: 100vw;
+    }
 }
 
 @media screen and (max-width: 340px) {
