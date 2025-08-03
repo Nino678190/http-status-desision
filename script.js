@@ -159,7 +159,8 @@ async function loadStatus(isFav = false) {
 
 async function loadQuestions(questionId) {
     try {
-        if (localStorage.getItem('quest') !== null || localStorage.getItem('quest') === '0' || localStorage.getItem('quest') === '[]') {
+        const questItem = localStorage.getItem('quest');
+        if (!questItem || questItem === '[]') {
             const response = await fetch('/questions.json'); // Ensure the correct relative path
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
