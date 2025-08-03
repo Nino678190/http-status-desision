@@ -43,32 +43,20 @@ function loadStatus() {
         .then(response => response.json())
         .then(data => {
             const statusContainer = document.querySelector('.library');
+            const addedHeadings = new Set();
             data.forEach(status => {
-                if (status.code === '100') {
+                const category = Math.floor(status.code / 100) * 100; // Determine category (e.g., 100, 200, etc.)
+                if (!addedHeadings.has(category)) {
                     const heading = document.createElement('h2');
-                    heading.textContent = '1xx Status Codes - Informational';
+                    if (category === 100) heading.textContent = '1xx Status Codes - Informational';
+                    if (category === 200) heading.textContent = '2xx Status Codes - Successful';
+                    if (category === 300) heading.textContent = '3xx Status Codes - Redirect';
+                    if (category === 400) heading.textContent = '4xx Status Codes - Client Error';
+                    if (category === 500) heading.textContent = '5xx Status Codes - Server Error';
                     statusContainer.appendChild(heading);
+                    addedHeadings.add(category);
                 }
-                if (status.code === '200') {
-                    const heading = document.createElement('h2');
-                    heading.textContent = '2xx Status Codes - Successful';
-                    statusContainer.appendChild(heading);
-                }
-                if (status.code === '300') {
-                    const heading = document.createElement('h2');
-                    heading.textContent = '3xx Status Codes - Redirect';
-                    statusContainer.appendChild(heading);
-                }
-                if (status.code === '400') {
-                    const heading = document.createElement('h2');
-                    heading.textContent = '4xx Status Codes - Client Error';
-                    statusContainer.appendChild(heading);
-                }
-                if (status.code === '500') {
-                    const heading = document.createElement('h2');
-                    heading.textContent = '5xx Status Codes - Server Error';
-                    statusContainer.appendChild(heading);
-                }
+
                 if (status.deprecated) {
                     status.name += ` ${deprecatedNote}`;
                     status.description = `${deprecatedMessage} <br> ${status.description}`;
