@@ -253,6 +253,22 @@ code{
     color: #c51818;
 }
 
+.error {
+    color: #ff0000;
+}
+
+.info {
+    color: #00bfff;
+}
+
+.warning {
+    color: #ffcc00;
+}
+
+.success {
+    color: #28a745;
+}
+
 .double{
     display: flex;
     flex-direction: row;
