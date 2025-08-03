@@ -110,7 +110,7 @@ async function loadStatus(isFav = false) {
 
                 const statusElement = document.createElement('details');
                 statusElement.innerHTML = `
-                        <summary>
+                        <summary id="${status.code}">
                             <section class="${status.deprecated ? 'double' : ''}"> ${status.code} - ${status.name}</section>
                             <section>
                                 <button class="favorites-button" onclick="addToFavorites('${status.code}')">
@@ -156,5 +156,79 @@ async function loadStatus(isFav = false) {
         .catch(error => console.error('Error loading status codes:', error));
 } 
 
-// &#9733; Filled star icon
-// &#9734; Empty star icon
+async function loadQuestions(questionId = 0) {
+    try {
+        const response = await fetch('questions.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const questData = await response.json();
+        localStorage.setItem('quest', JSON.stringify(questData));
+    } catch (error) {
+        createToast('Failed to load questions.json', 'fail');
+        console.error('Error loading questions.json:', error);
+        return;
+    }
+    if (localStorage.getItem('quest') === null) {
+        createToast('Failed to load questions.json', 'fail');
+        return;
+    }
+    localStorage.setItem('questID', questionId);
+    const questDataRaw = localStorage.getItem('quest');
+    if (!questDataRaw) {
+        createToast('Questions data is missing or invalid.', 'fail');
+        return;
+    }
+    let questData;
+    try {
+        questData = JSON.parse(questDataRaw);
+        questData = questData[questionId]
+    } catch (error) {
+        createToast('Failed to parse questions data.', 'fail');
+        console.error('Error parsing questions data:', error);
+        return;
+    }
+    if (document.querySelector('.question-container')) {
+        document.querySelector('.question-container').remove();
+    }
+    const container = document.createElement('section');
+    container.classList.add('question-container');
+    container.innerHTML = `
+            <h2 id="question">${questData.question}</h2>
+            <section class="question-description">
+                <h4>Examples</h4>
+                <ul>
+                    <li class="example">${questData.examples[0]}</li>
+                    <li class="example">${questData.examples[1]}</li>
+                    <li class="example">${questData.examples[2]}</li>
+                </ul>
+            </section>
+            <nav>
+                <button class="answer green" onclick="loadQuestions(${questData.answers[0].nextQuestionId})">Yes</button>
+                <button class="answer yellow" onclick="loadQuestions(${questData.answers[1].nextQuestionId})">Maybe</button>
+                <button class="answer red" onclick="loadQuestions(${questData.answers[2].nextQuestionId})">No</button>
+            </nav>
+        `;
+    document.querySelector('main').appendChild(container);
+}
+
+function displayResult(code1, code2 = null, code3 = null){
+    const doc = document.querySelector('main');
+    if (doc.querySelector('.question-container')) {
+        doc.querySelector('.question-container').remove();
+    }
+    const container = document.createElement('section');
+    container.classList.add('result-container');
+    container.innerHTML = `
+        <h2>Result</h2>
+        <p>Your HTTP status codes are:</p>
+        <ul>
+            <li class="status-code" onclick="window.location.href='library.html#${code1}'">${code1}</li>
+            ${code2 ? `<li class="status-code" onclick="window.location.href='library.html#${code2}'">${code2}</li>` : ''}
+            ${code3 ? `<li class="status-code" onclick="window.location.href='library.html#${code3}'">${code3}</li>` : ''}
+        </ul>
+        <button class="back-button" onclick="loadQuestions(0)">Back to Questions</button>
+    `;
+    doc.appendChild(container);
+
+}

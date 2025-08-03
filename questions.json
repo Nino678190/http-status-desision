@@ -23,18 +23,14 @@
                 "nextQuestionId": 4,
                 "statusCodes": [1, 2, 3]
             }
-        ],
-        "back": {
-            "nextQuestionId": null,
-            "statusCodes": []
-        }
+        ]
     },
     {
         "questionId": 2,
         "question": "Is the request valid?",
         "examples": [
-            "A user tried to access a resource that does not exist.",
-            "A request was made with invalid parameters."
+            "Was the ressorce requested moved to a different URL?",
+            "A request was made with valid parameters."
         ],
         "answers": [
             {
@@ -52,11 +48,7 @@
                 "nextQuestionId": 7,
                 "statusCodes": [4]
             }
-        ],
-        "back": {
-            "nextQuestionId": 1,
-            "statusCodes": [3, 4, 5]
-        }
+        ]
     },
     {
         "questionId": 3,
@@ -82,10 +74,6 @@
                 "nextQuestionId": 10,
                 "statusCodes": [3]
             }
-        ],
-        "back": {
-            "nextQuestionId": 1,
-            "statusCodes": [1, 3, 202]
-        }
+        ]
     }
 ]
