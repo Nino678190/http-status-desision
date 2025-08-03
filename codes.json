@@ -1,8 +1,1420 @@
 [
     {
         "code": 100,
-        "description": "",
+        "name": "Continue",
+        "description": "The Status Code indicates that the initial part of a request has been received and has not yet been rejected by the server.",
         "examples": ["",""],
-        "path": [true, true]
+        "deprecated": false,
+        "status": "informational",
+        "requestExample": {
+            "method": "GET",
+            "url": "/continue",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 100,
+            "headers": {
+                "Content-Type": "text/plain"
+            },
+            "body": "Continue"
+        } 
+    },
+    {
+        "code": 101,
+        "name": "Switching Protocols",
+        "description": "The Status Code indicates that the protocol of the server has switched.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "informational",
+        "requestExample": {
+            "method": "GET",
+            "url": "/upgrade",
+            "headers": {
+                "Upgrade": "websocket",
+                "Connection": "Upgrade"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 101,
+            "headers": {
+                "Upgrade": "websocket",
+                "Connection": "Upgrade"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 102,
+        "name": "Processing",
+        "description": "This status code indicates that the server has received the request and is processing it, but a response will take a longer time.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": true,
+        "status": "informational",
+        "requestExample": {
+            "method": "POST",
+            "url": "/long-process",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 102,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 103,
+        "name": "Early Hints",
+        "description": "This Status Code gives an early hint to the user, so the client can preconnet/preload a ressource",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "informational",
+        "requestExample": {
+            "method": "GET",
+            "url": "/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 103,
+            "headers": {
+                "Link": "</style.css>; rel=preload; as=style"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 200,
+        "name": "OK",
+        "description": "This Status Code indicates a request succeded. The response can give back Information.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "GET",
+            "url": "/data",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 200,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": "{\"message\": \"Success\"}"
+        }
+    },
+    {
+        "code": 201,
+        "name": "Created",
+        "description": "This status Code indicates that a ressource was created. This could be a user, a form Input, etc.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "POST",
+            "url": "/users",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": "{\"name\": \"John Doe\"}"
+        },
+        "responseExample": {
+            "status": 201,
+            "headers": {
+                "Location": "/users/123"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 202,
+        "name": "Accepted",
+        "description": "The Status Code indicates that the request is being processed but it is not guaranteed the request will be successful. It comes often with a response body to track the progress",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "POST",
+            "url": "/batch-job",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 202,
+            "headers": {
+                "Location": "/batch-job/status"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 203,
+        "name": "Non-Authoritative Information",
+        "description": "The Status Code informs the user, that the original request succeded but the response was changed by a proxy like malware-filtering, etc.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "GET",
+            "url": "/data",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 203,
+            "headers": {},
+            "body": "Transformed Body"
+        }
+    },
+    {
+        "code": 204,
+        "name": "No Content",
+        "description": "This status code informs the user that their request succeded, but no action on the client side is required. This is used in cases where something was changed or deleted.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "DELETE",
+            "url": "/posts/1",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 204,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 205,
+        "name": "Reset Content",
+        "description": "This Status code indicates that the request succeded and the client should reset their page. This is useful, when for example the user inputs something into a form.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "POST",
+            "url": "/form",
+            "headers": {},
+            "body": "data=value"
+        },
+        "responseExample": {
+            "status": 205,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 206,
+        "name": "Partial Content",
+        "description": "The Status Code is sent after a range request is made. This includes the partial date, from the range.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "GET",
+            "url": "/video.mp4",
+            "headers": {
+                "Range": "bytes=200-1000"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 206,
+            "headers": {
+                "Content-Range": "bytes 200-1000/10000"
+            },
+            "body": "..."
+        }
+    },
+    {
+        "code": 207,
+        "name": "Multi-Status",
+        "description": "This Status Code is returned, when there are multiple Status Codes returned. It is formatted with xml adn has a multistatus root element",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "PROPFIND",
+            "url": "/webdav/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 207,
+            "headers": {
+                "Content-Type": "application/xml"
+            },
+            "body": "<multistatus>...</multistatus>"
+        }
+    },
+    {
+        "code": 208,
+        "name": "Already Reported",
+        "description": "This Status Code is used only in the context of WebDAV. It is used with 207 to shorten the response, if one ressource is requested from multiple paths.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "PROPFIND",
+            "url": "/webdav/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 208,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 226,
+        "name": "IM Used",
+        "description": "This Status Code is used, if the user has a version of a ressource, that is not the latest version. The server will then return the latest version of the ressource, but only the changes to the ressource, not the whole ressource.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "successful",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {
+                "A-IM": "vcdiff"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 226,
+            "headers": {},
+            "body": "..."
+        }
+    },
+    {
+        "code": 300,
+        "name": "Multiple Choices",
+        "description": "This Status Code is used to give the user-agent a list of possible requests, like a website in multiple languages. The user agent could choose one option but most agents lack this skill",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "GET",
+            "url": "/document",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 300,
+            "headers": {
+                "Link": "</document.en>; rel=\"alternate\", </document.de>; rel=\"alternate\""
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 301,
+        "name": "Moved Permanently",
+        "description": "This Status Code informs the user, that the ressource has a new location. The browser will automaticly follow the response to the new location.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "GET",
+            "url": "/old-page",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 301,
+            "headers": {
+                "Location": "/new-page"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 302,
+        "name": "Found",
+        "description": "This Status Code informs the user, that the ressource they requested has been moved temporarly to a new location. The browser will automaticly follow the response to the new location.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "GET",
+            "url": "/temp-page",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 302,
+            "headers": {
+                "Location": "/another-page"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 303,
+        "name": "See Other",
+        "description": "The Status Code informs the user, that the request was successful but to see changes they need to do a GET Request.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "POST",
+            "url": "/process",
+            "headers": {},
+            "body": "data=value"
+        },
+        "responseExample": {
+            "status": 303,
+            "headers": {
+                "Location": "/result"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 304,
+        "name": "Not Modified",
+        "description": "The Status Code informs the user, that nothing has changed since the last request, so there is no need to retransmit the ressource.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {
+                "If-None-Match": "etag"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 304,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 307,
+        "name": "Temporary Redirect",
+        "description": "This Status Code informs the user, that the ressource they requested has been moved temporarly to a new location. The browser will automaticly follow the response to the new location.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "POST",
+            "url": "/login",
+            "headers": {},
+            "body": "user=test"
+        },
+        "responseExample": {
+            "status": 307,
+            "headers": {
+                "Location": "/login-temp"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 308,
+        "name": "Permanent Redirect",
+        "description": "This Status Code informs the user, that the ressource has a new location. The browser will automaticly follow the response to the new location.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "redirect",
+        "requestExample": {
+            "method": "POST",
+            "url": "/submit",
+            "headers": {},
+            "body": "data=value"
+        },
+        "responseExample": {
+            "status": 308,
+            "headers": {
+                "Location": "/submit-new"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 400,
+        "name": "Bad Request",
+        "description": "This Status Code is used to notify the user, that their request could be processed, which is typiclly due malformed or invalid syntax.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/api",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": "{'invalid-json'}"
+        },
+        "responseExample": {
+            "status": 400,
+            "headers": {},
+            "body": "Bad Request"
+        }
+    },
+    {
+        "code": 401,
+        "name": "Unauthorized",
+        "description": "This Code is used to inform, that for this requested action, there needs to be some kind of authentication.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/private",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 401,
+            "headers": {
+                "WWW-Authenticate": "Basic"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 402,
+        "name": "Payment Required",
+        "description": "This Status Code informs the User, that they can only access the requested ressource, if they pay.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": true,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/premium-content",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 402,
+            "headers": {},
+            "body": "Payment Required"
+        }
+    },
+    {
+        "code": 403,
+        "name": "Forbidden",
+        "description": "This Status Code is sent to inform the user, that they can't access this ressource, because they don't have enough privaleges.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/admin",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 403,
+            "headers": {},
+            "body": "Forbidden"
+        }
+    },
+    {
+        "code": 404,
+        "name": "Not Found",
+        "description": "The status code informs the user that the requested ressource couldn't be found.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/non-existent-page",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 404,
+            "headers": {},
+            "body": "Not Found"
+        }
+    },
+    {
+        "code": 405,
+        "name": "Method Not Allowed",
+        "description": "This Status Code indicates that the Method used isn't supported by the server. In response, the server sends all allowed methodes",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "PUT",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 405,
+            "headers": {
+                "Allow": "GET, POST"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 406,
+        "name": "Not Acceptable",
+        "description": "This means, that the Server couldn't respond with a matching ressource for proactive content headers like: Accept, Accept-Ancoding or Accept-Language",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/data",
+            "headers": {
+                "Accept": "application/xml"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 406,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 407,
+        "name": "Proxy Authentication Required",
+        "description": "This Status code indicates missing valid authentication for the proxy between Server and Client.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 407,
+            "headers": {
+                "Proxy-Authenticate": "Basic"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 408,
+        "name": "Request Timeout",
+        "description": "This Code indicates that the server wants to close the unused connection between Server and Client.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/slow-resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 408,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 409,
+        "name": "Conflict",
+        "description": "This Code indicates a Conflict in ressources. Maybe some changes that were made just before the clients request from another client or some Conflict in data, as in version Control, where the uploaded file is older than the latest on the server.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "PUT",
+            "url": "/resource/1",
+            "headers": {
+                "If-Match": "old-etag"
+            },
+            "body": "new data"
+        },
+        "responseExample": {
+            "status": 409,
+            "headers": {},
+            "body": "Conflict"
+        }
+    },
+    {
+        "code": 410,
+        "name": "Gone",
+        "description": "This Status Code indicates that a ressource isn't available anymore. It should be replaced shortly after with a 404.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/old-resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 410,
+            "headers": {},
+            "body": "Gone"
+        }
+    },
+    {
+        "code": 411,
+        "name": "Length Required",
+        "description": "This indicates that the Server needs the Content-Length Header.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/upload",
+            "headers": {},
+            "body": "some data"
+        },
+        "responseExample": {
+            "status": 411,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 412,
+        "name": "Precondition Failed",
+        "description": "This means that the server checked the precondition of the client and couldn't fullfil it.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {
+                "If-Unmodified-Since": "date"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 412,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 413,
+        "name": "Payload Too Large",
+        "description": "This Code indicates that the transmitted Content was to large for the servers boundarys.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/upload",
+            "headers": {
+                "Content-Length": "5000000"
+            },
+            "body": "large data"
+        },
+        "responseExample": {
+            "status": 413,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 414,
+        "name": "URI Too Long",
+        "description": "This Status Code is returned rarely, probably if the request was being transformed inpropperly form POST to GET or there is a loop in the URI",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/...very-long-uri...",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 414,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 415,
+        "name": "Unsupported Media Type",
+        "description": "This Status Code indicates, that the Content-Type Header is missing or incorrect or some file, that is uploaded has a unsupported File extension.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/upload",
+            "headers": {
+                "Content-Type": "image/svg+xml"
+            },
+            "body": "<svg>...</svg>"
+        },
+        "responseExample": {
+            "status": 415,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 416,
+        "name": "Range Not Satisfiable",
+        "description": "This Status Code indicates that the range in the Header couldn't be served. This could be due to invalid syntax or the ressource doesn't contain ranges.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/file",
+            "headers": {
+                "Range": "bytes=1000-2000"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 416,
+            "headers": {
+                "Content-Range": "bytes */500"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 417,
+        "name": "Expectation Failed",
+        "description": "This Status Code means that the expected response couldn't be satisfyed.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/api",
+            "headers": {
+                "Expect": "100-continue"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 417,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 418,
+        "name": "I'm a teapot",
+        "description": "This Status Code indicates that the server is a teapot and can't brew coffee. Insted you should return a 503 Status Code. This Status Code was a April Fools Joke in 1998, but is still used in some APIs.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": true,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/brew-coffee",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 418,
+            "headers": {},
+            "body": "I'm a teapot"
+        }
+    },
+    {
+        "code": 421,
+        "name": "Misdirected Request",
+        "description": "This Code means that the server wasn't able to produce a product. This could be due to some Wildcards in the Code.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 421,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 422,
+        "name": "Unprocessable Content",
+        "description": "This Code indicates that the server coudn't process the request due to the content of the request being in a wrong format.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "POST",
+            "url": "/users",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": "{\"name\": \"\"}"
+        },
+        "responseExample": {
+            "status": 422,
+            "headers": {},
+            "body": "Unprocessable Content"
+        }
+    },
+    {
+        "code": 423,
+        "name": "Locked",
+        "description": "This Code is used in WebDAV, so no Conflicts can emerge.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "LOCK",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 423,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 424,
+        "name": "Failed Dependency",
+        "description": "This Code indicates that the required action depended on another action and this failed.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "PROPPATCH",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 424,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 425,
+        "name": "Too Early",
+        "description": "This Status Code indicates that the server is not ready to process the request, because it is too early.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 425,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 426,
+        "name": "Upgrade Required",
+        "description": "This Status Code indicates that the currently used method isn't supported and the request should be made with a diffrent method again.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {
+                "Connection": "Upgrade",
+                "Upgrade": "HTTP/2.0"
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 426,
+            "headers": {
+                "Upgrade": "HTTP/2.0"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 428,
+        "name": "Precondition Required",
+        "description": "This Status Code is returned if a precondition is missing in the request header.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 428,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 429,
+        "name": "Too Many Requests",
+        "description": "This Code is sent, cause a limit was reached. This is called a rate-limiter. The response could include a Retry-After Header.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/api",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 429,
+            "headers": {
+                "Retry-After": "3600"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 431,
+        "name": "Request Header Fields Too Large",
+        "description": "The Status Code informs the user, that some Request Header is to large to process and should be reduced.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {
+                "Large-Header": "..."
+            },
+            "body": ""
+        },
+        "responseExample": {
+            "status": 431,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 451,
+        "name": "Unavailable For Legal Reasons",
+        "description": "This response is sent, when a ressource isn't available due to legal problems. The response includes a blocked-by Body.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "client-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/censored-content",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 451,
+            "headers": {
+                "Link": "<https://www.example.gov/censorship-notice>; rel=\"blocked-by\""
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 500,
+        "name": "Internal Server Error",
+        "description": "This Status Code is a generic Code to respond to the client that some task on the server failed.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/buggy-endpoint",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 500,
+            "headers": {},
+            "body": "Internal Server Error"
+        }
+    },
+    {
+        "code": 501,
+        "name": "Not Implemented",
+        "description": "This Code means that the server doesn't have the functionality to fullfill the request.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "TRACE",
+            "url": "/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 501,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 502,
+        "name": "Bad Gateway",
+        "description": "This Status Code indicates that some server acting as Gateway or Proxy recieved a invalid response",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 502,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 503,
+        "name": "Service Unavailable",
+        "description": "This indicated that the Server is unavailable. This could be due to updates or overload.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 503,
+            "headers": {
+                "Retry-After": "3600"
+            },
+            "body": ""
+        }
+    },
+    {
+        "code": 504,
+        "name": "Gateway Timeout",
+        "description": "This Status Code indicates that a server acting as Gateway or Proxy couldn't responde in a certain time",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/slow-backend",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 504,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 505,
+        "name": "HTTP Version Not Supported",
+        "description": "This Status Code indicates that the HTTP Version used in the request isn't supported by the server. This could be due to a incorrectly setup of a loadbalancer.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 505,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 506,
+        "name": "Variant Also Negotiates",
+        "description": "This Code is send if the server selected some ressource which is excluded in the request.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 506,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 507,
+        "name": "Insufficient Storage",
+        "description": "This Status Code is send due to internal limits of storge. This issue can be temporarly.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "PUT",
+            "url": "/resource",
+            "headers": {},
+            "body": "data"
+        },
+        "responseExample": {
+            "status": 507,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 508,
+        "name": "Loop Detected",
+        "description": "This Code is returned if the server detects, that the request created a endless loop",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "PROPFIND",
+            "url": "/webdav/",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 508,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 510,
+        "name": "Not Extended",
+        "description": "This Code is returned if the server doesn'z have enough Information to fullfill the request due to a missing Extension.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 510,
+            "headers": {},
+            "body": ""
+        }
+    },
+    {
+        "code": 511,
+        "name": "Network Authentication Required",
+        "description": "This Status Code is responded by a proxy where some kind of authentication is needed, so the request can be sent to the server.",
+        "examples": [
+            "",
+            ""
+        ],
+        "deprecated": false,
+        "status": "server-error",
+        "requestExample": {
+            "method": "GET",
+            "url": "/resource",
+            "headers": {},
+            "body": ""
+        },
+        "responseExample": {
+            "status": 511,
+            "headers": {},
+            "body": ""
+        }
     }
 ]
