@@ -212,6 +212,7 @@ async function loadQuestions(questionId = 0) {
     document.querySelector('main').appendChild(container);
 }
 
+//* Overthink Display Result Function
 function displayResult(code1, code2 = null, code3 = null){
     const doc = document.querySelector('main');
     if (doc.querySelector('.question-container')) {
