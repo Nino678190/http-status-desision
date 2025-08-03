@@ -210,10 +210,6 @@ details[open] summary {
     margin-bottom: 0.5em;
 }
 
-details[open]:not(summary){
-    cursor: text;
-}
-
 .favorites-button{
     background: none;
     width: fit-content;
@@ -252,20 +248,34 @@ code{
     color: #c51818;
 }
 
-.error {
-    color: #ff0000;
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.info {
-    color: #00bfff;
+.toast.error {
+    background-color: #dc3545;
 }
 
-.warning {
-    color: #ffcc00;
+.toast.info {
+    background-color: #0d6efd;
 }
 
-.success {
-    color: #28a745;
+.toast.warning {
+    background-color: #ffc107;
+}
+
+.toast.success {
+    background-color: #28a745;
 }
 
 .double{
@@ -283,6 +293,10 @@ code{
 .star{
     font-size: 40px;
     color: #ccc;
+}
+
+.filled{
+    color: #f1c40f;
 }
 
 @media screen and (max-width: 340px) {

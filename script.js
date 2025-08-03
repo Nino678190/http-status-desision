@@ -1,16 +1,32 @@
 function addToFavorites(status){
     let favorites = localStorage.getItem("fav");
-    if (favorites === null || favorites === undefined){
-        localStorage.setItem("fav", "[${status}]");
-        return;
+    let favoritesArray = favorites ? JSON.parse(favorites) : [];
+    
+    if (favoritesArray.includes(status)) {
+        favoritesArray = favoritesArray.filter(item => item !== status);
+        createToast(`Status Code ${status} removed from favorites.`, "info");
+        const filled = document.querySelectorAll(`.star.filled`);
+        filled.forEach(star => {
+            if (star.getAttribute('value') === status) {
+                star.classList.remove('filled');
+                star.classList.add('empty');
+                star.innerHTML = '&#9734;';
+            }
+        });
+    } else {
+        favoritesArray.push(status);
+        createToast(`Status Code ${status} added to favorites.`, "success");
+        const empty = document.querySelectorAll(`.star.empty`);
+        empty.forEach(star => {
+            if (star.getAttribute('value') === status) {
+                star.classList.remove('empty');
+                star.classList.add('filled');
+                star.innerHTML = '&#9733;';
+            }
+        });
     }
-    if (favorites.includes(status)){
-        favorites.remove(status);
-        localStorage.setItem("fav", favorites);
-        return;
-    }
-    favorites.append(status);
-    localStorage.setItem("fav", favorites);
+    
+    localStorage.setItem("fav", JSON.stringify(favoritesArray));
 }
 
 function createToast(message, type = "info") {
@@ -27,6 +43,13 @@ function createToast(message, type = "info") {
     }
     toast.textContent = message;
     document.body.appendChild(toast);
+    toast.addEventListener('click', () => {
+        if (typeof toast.remove === 'function') {
+            toast.remove();
+        } else if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+        }
+    });
     setTimeout(() => {
         if (typeof toast.remove === 'function') {
             toast.remove();
@@ -36,13 +59,27 @@ function createToast(message, type = "info") {
     }, 3000);
 }
 
-async function loadStatus() {
+async function loadStatus(isFav = false) {
     const statusContainer = document.querySelector('.library');
+    if (!statusContainer) {
+        console.error('Status container not found.');
+        return;
+    }
     const deprecatedNote = '<span class="deprecated"> (Deprecated)</span>';
     const deprecatedMessage = '<span class="deprecated"><b>Disclamer: </b></span>This status code is deprecated and should only be used for compatibility purposes.';
     await fetch('codes.json')
         .then(response => response.json())
         .then(data => {
+            if (isFav) {
+                const favorites = localStorage.getItem("fav");
+                if (favorites && favorites.length > 0 && favorites !== '[]') {
+                    const favoritesArray = JSON.parse(favorites);
+                    data = data.filter(status => favoritesArray.includes(status.code.toString()));
+                } else {
+                    createToast("You have no favorites yet.", "info");
+                    return;
+                }
+            }
             const addedHeadings = new Set();
             data.forEach(status => {
                 const category = Math.floor(status.code / 100) * 100; // Determine category (e.g., 100, 200, etc.)
@@ -55,12 +92,21 @@ async function loadStatus() {
                     if (category === 500) heading.textContent = '5xx Status Codes - Server Error';
                     statusContainer.appendChild(heading);
                     addedHeadings.add(category);
-                }
+                } 
 
                 if (status.deprecated) {
                     status.name += ` ${deprecatedNote}`;
                     status.description = `${deprecatedMessage} <br> ${status.description}`;
                 }
+
+                const favorites = localStorage.getItem("fav");
+                let isFavorite = false;
+                if (favorites) {
+                    const favoritesArray = JSON.parse(favorites);
+                    isFavorite = favoritesArray.includes(status.code.toString());
+                }
+                let starClass = isFavorite ? 'star filled' : 'star empty';
+                let starIcon = isFavorite ? '&#9733;' : '&#9734;';
 
                 const statusElement = document.createElement('details');
                 statusElement.innerHTML = `
@@ -68,8 +114,7 @@ async function loadStatus() {
                             <section class="${status.deprecated ? 'double' : ''}"> ${status.code} - ${status.name}</section>
                             <section>
                                 <button class="favorites-button" onclick="addToFavorites('${status.code}')">
-                                    <!-- <img src="images/star-empty-icon.png" alt="Favorites Icon" class="lib-icon"> -->
-                                    <span class="star">&#9734;</span>
+                                    <span class="${starClass}" value="${status.code}">${starIcon}</span>
                                 </button>
                             </section>
                         </summary>
@@ -109,10 +154,6 @@ async function loadStatus() {
             });
         })
         .catch(error => console.error('Error loading status codes:', error));
-        const note = document.createElement('p');
-        note.className = 'passiv';
-        note.innerHTML = `Some of the information comes from <a href="http://" target="_blank" rel="noopener noreferrer">MDN Docs</a>. All Status Code are explained simple. I can't guarante, that everything is correct.`;
-        statusContainer.appendChild(note);
 } 
 
 // &#9733; Filled star icon
