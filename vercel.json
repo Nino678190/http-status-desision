@@ -1,0 +1,9 @@
+{
+    "cleanUrls": true,
+    "rewrites": [],
+    "redirects": [],
+    "headers": [],
+    "trailingSlash": false,
+    "outputDirectory": ".",
+    "framework": null
+}
