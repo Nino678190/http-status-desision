@@ -1,3 +1,4 @@
+![https://hackatime-badge.hackclub.com/U07F2KK3Z29/http-status-desision](https://hackatime-badge.hackclub.com/U07F2KK3Z29/http-status-desision)
 # HTTP Status Code Guide 🚀
 
 This project is an interactive guide designed to help developers understand and choose the correct HTTP status code for their web applications. It uses a question-and-answer flow to guide users to the most appropriate status code based on their specific scenario. It also provides a comprehensive library of status codes and allows users to save their favorites for easy access.
