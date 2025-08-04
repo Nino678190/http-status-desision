@@ -89,10 +89,6 @@ Contributions are welcome! If you find a bug or have an idea for a new feature, 
 
 This project is licensed under the [GNU PL V3 License](LICENSE).
 
-## 📬 Contact
-
-If you have any questions or feedback, please feel free to contact me at [your-email@example.com](mailto:your-email@example.com).
-
 ## 💖 Thanks
 
 Thank you for checking out the HTTP Status Code Guide! I hope it helps you in your web development journey.
