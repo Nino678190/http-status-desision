@@ -5,7 +5,7 @@ flowchart TD
       A -->|1,2,3| D{"Sind es Ressources die gesendet werden (vom Server)?"}
       B -->|401, 403, 404, 407, 409, 423,424, 425, 426, 429, 451, 500, 501, 502,503,504,505,506,507,508,510,511| E{Ist es ein Auth Fehler?}
       B -->|400,405, 406, 411, 412, 413, 414, 415,
-            416, 417, 421, 422,426, 428, 431| G
+            416, 417, 421, 422,426, 428, 431| G{Ist die Anfrage korrekt?}
       D -->|101,206, 226, 300| N{Ist es eine Information zum Wechseln?}
       D -->|100, 103, 200,201,202,203,204,205,207,208, 301, 302, 303, 304, 307,308, 410| L{Muss der Client eine Aktion in Reaktion auf den Code machen?}
       E -->|401, 403, 407, 511| M{Hat der Client die Rechte?}
@@ -36,7 +36,7 @@ flowchart TD
       AE -->AL([307])
       AK --> AM([303])
       AK --> AN([302])
-      O -->|404, 409, 423, 424, 425, 426, 429, 451| AP
+      O -->|404, 409, 423, 424, 425, 426, 429, 451| AP{Existiert die Ressource?}
       O -->|500, 501, 502,503,504,505,506,507,508,510| AQ{Liegt das Problem direkt am Server?}
       AQ -->|502,504| AS{Gab es ein Timeout?}
       AQ -->|500,501,503,505,506,507,508,510| AV{Ist es ein allgemeiner Fehler/Response?}
@@ -56,5 +56,21 @@ flowchart TD
       BA -->|505| BH([505])
       BG -->|510| BI([510])
       BG -->|506| BJ([506])
+      AP -->|404| BK([404])
+      AP -->|409, 423, 424, 425, 426,429, 451| BP{Wird die Anfrage aufgrund Zeitlichem Timing abgelehnt?}
+      BP -->|425, 429| BQ{Wurde die Anfrage aufgrund von Rate Limiting abgelehnt?}
+      BP -->|409, 423, 424, 426, 451| BR{Gibt es Konflikt mit der Ressource?}
+      BQ -->|429| BS([429])
+      BQ -->|425| BT([425])
+      BR -->|409,423| BU{Ist die Ressource im Konflikt mit einer anderen?}
+      BR -->|424, 426, 451| BV{Gibt es rechtliche Probleme mit der Ressource?}
+      BV -->|451| BW([451])
+      BV -->|424, 426| BX{Ist ein Upgrade der Methode notwendig?}
+      BU -->|409| BY([409])
+      BU -->|423| BZ([423])
+      BX -->|426| CA([426])
+      BX -->|424| CB([424])
+      G -->|405, 406, 411, 412, 413,415, 416, 417, 421, 422,426, 428| CC
+      G -->|400, 414, 431| CD
 
 ```
