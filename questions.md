@@ -5,7 +5,7 @@ flowchart TD
       A -->|1,2,3| D{"Sind es Ressources die gesendet werden (vom Server)?"}
       B -->|401, 403, 404, 407, 409, 423,424, 425, 426, 429, 451, 500, 501, 502,503,504,505,506,507,508,510,511| E{Ist es ein Auth Fehler?}
       B -->|400,405, 406, 411, 412, 413, 414, 415,
-            416, 417, 421, 422,426, 428, 431| G{Ist die Anfrage korrekt?}
+            416, 417, 421, 422, 428, 431| G{Ist die Anfrage korrekt?}
       D -->|101,206, 226, 300| N{Ist es eine Information zum Wechseln?}
       D -->|100, 103, 200,201,202,203,204,205,207,208, 301, 302, 303, 304, 307,308, 410| L{Muss der Client eine Aktion in Reaktion auf den Code machen?}
       E -->|401, 403, 407, 511| M{Hat der Client die Rechte?}
@@ -23,7 +23,7 @@ flowchart TD
       V -->|403| Z([403])
       V -->|401| AA([401])
       L -->|100,103,301,302,303,307, 308, 410| AB{Ist es eine Weiterleitung?}
-      L -->|100,200,201,202,203,204,205,207,208, 304| AC
+      L -->|100,200,201,202,203,204,205,207,208, 304| AC{Wird die Anfrage gerade bearbeitet, aber ihr ausgang ist ungewiss?}
       AB -->|301,302,303, 307, 308| AD{Ist die Weiterleitung temporär?}
       AB -->|103, 410| AR{Soll eine Ressource gepreloaded werden?}
       AD -->|302, 303, 307| AE{Ist die Request eine GET Request?}
@@ -70,7 +70,49 @@ flowchart TD
       BU -->|423| BZ([423])
       BX -->|426| CA([426])
       BX -->|424| CB([424])
-      G -->|405, 406, 411, 412, 413,415, 416, 417, 421, 422,426, 428| CC
-      G -->|400, 414, 431| CD
+      G -->|405, 406, 411, 412, 413,415, 416, 417, 421, 428| CC{Ist die ANfrage technisch fehlerhaft? Also Methode, Header, Body?}
+      G -->|400, 414, 422, 428 431| CD{War etwas zu lang?}
+      CD -->|414, 431| CE{War ein Resquest Header zu lang?}
+      CD -->|400,422, 428| CF{Liegt es an einer fehlenden Precondition?}
+      CF -->|428| CK([428])
+      CF -->|400, 422| CL{Liegt es an falscher Syntax?}
+      CE --> CG([431])
+      CE --> CH([414])
+      CC -->|405,406,411,412,413,415,416,417| CI{Liegt der Fehler im Header?}
+      CC -->|421| CJ([421])
+      CL -->|422| CM([422])
+      CL -->|400| CN([400])
+      CI -->|406,411,412,415,416,417| CO{Liegt der Fehler bei einer Erwartung?}
+      CI -->|405,413| CP{Liegt der Fehler in der Methode?}
+      CP -->|405| CQ([405])
+      CP -->|413| CR([413])
+      CO -->|406,411,416,417| CS{Wird ein bestimmer Status Code erwartet, der nicht erfüllt werden kann?}
+      CO -->|412,415| CT{Wird der Medien Typ nicht unterstützt?}
+      CS -->|417| CU([417])
+      CS -->|406,411,416| CV{Erwartet der Client eine bestimmte Ressource/Teile davon?}
+      CV -->|416| CW([416])
+      CV -->|406,411| CX{Erwartet der Client einen Content-Length-Header?}
+      CX -->|411| CY([411])
+      CX -->|406| CZ([406])
+      CT -->|415| DA([415])
+      CT -->|412| DB([412])
+      AC -->|100,202| DC{Hat die Response einen Body?}
+      AC -->|200, 201,203,204,205,207,208,304| DF{Werden mehrere Status Codes gesendet?}
+      DC -->|202| DD([202])
+      DC -->|100| DE([100])
+      DF -->|207,208| DG{Ist der Status Code der Hinweis auf mehrere Status Codes?}
+      DF -->|200,201,203,204,205,304| DJ{Wurde ein neuer Inhalt erstellt?}
+      DG -->|207| DH([207])
+      DG -->|208| DI([208])
+      DJ -->|201| DK([201])
+      DJ -->|200,203,204,205,304| DN{Wird ein Inhalt im Body gesendet?}
+      DN -->|200, 304| DM{Hat sich der Inhalt geändert?}
+      DN -->|203,204,205| DO{Wird eine Aktion vom Client erwartet?}
+      DO -->|205| DP([205])
+      DO -->|203,204| DQ{Wird ein Information im Body gesendet?}
+      DQ -->|204| DR([204])
+      DQ -->|203| DS([203])
+      DM -->|200| DL([200])
+      DM -->|304| DT([304])
 
 ```
