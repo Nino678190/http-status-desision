@@ -37,5 +37,24 @@ flowchart TD
       AK --> AM([303])
       AK --> AN([302])
       O -->|404, 409, 423, 424, 425, 426, 429, 451| AP
-      O -->|500, 501, 502,503,504,505,506,507,508,510| AQ
+      O -->|500, 501, 502,503,504,505,506,507,508,510| AQ{Liegt das Problem direkt am Server?}
+      AQ -->|502,504| AS{Gab es ein Timeout?}
+      AQ -->|500,501,503,505,506,507,508,510| AV{Ist es ein allgemeiner Fehler/Response?}
+      AS -->|504| AT([504])
+      AS -->|502| AU([502])
+      AV -->|500| AW([500])
+      AV -->|501,503,505,506,507,508,510| AX{Ist der Fehler temporär?}
+      AX -->|503,507| AY{Liegt der Fehler an fehlendem Speicher?}
+      AX -->|501,505,506,508,510| AZ{Ist der Fehler aufgrund dem Inhalt einer Anfrage, die falsch ist?}
+      AZ -->|505,506, 510| BA{Liegt es an den Requirements der Anfrage?}
+      AZ -->|501,508| BB{Ist der Fehler aufgrund einer nicht implementierten Funktion?}
+      AY -->|507| BC([507])
+      AY -->|503| BD([503])
+      BB -->|501| BE([501])
+      BB -->|508| BF([508])
+      BA -->|506,510| BG{Fehlen Informationen in der Anfrage?}
+      BA -->|505| BH([505])
+      BG -->|510| BI([510])
+      BG -->|506| BJ([506])
+
 ```
