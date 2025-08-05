@@ -6,4 +6,4 @@ Disallow: /questions.md
 Disallow: /vercel.json
 Allow: /
 
-Sitemap: https://nino678190.github.io/http-status-desision/sitemap.xml
+Sitemap: https://nino678190.github.io/http-status-desision/sitemaps.xml
