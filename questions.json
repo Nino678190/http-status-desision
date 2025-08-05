@@ -11,68 +11,895 @@
             {
                 "answer": "Yes",
                 "nextQuestionId": 2,
-                "statusCodes": "[3, 4, 5]"
-            },
-            {
-                "answer": "Maybe",
-                "nextQuestionId": 3,
-                "statusCodes": "[1,3, 202]"
+                "statusCodes": "[4, 5]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 4,
+                "nextQuestionId": 3,
                 "statusCodes": "[1, 2, 3]"
             }
         ]
     },
     {
         "questionId": 2,
-        "question": "Is the request valid?",
+        "question": "Was the Request Valid?",
         "examples": [
-            "Was the ressorce requested moved to a different URL?",
-            "A request was made with valid parameters."
+            "",
+            "",
+            ""
         ],
         "answers": [
             {
                 "answer": "Yes",
-                "nextQuestionId": 5,
-                "statusCodes": "[3,5]"
-            },
-            {
-                "answer": "Maybe",
-                "nextQuestionId": 6,
-                "statusCodes": "[3]"
+                "nextQuestionId": 4,
+                "statusCodes": "[401,403,404,407,408,409,423,424,425,426,429,451,500,501,502,503,504,505,506,507,508,510,511]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 7,
-                "statusCodes": "[4]"
+                "nextQuestionId": 5,
+                "statusCodes": "[400,405,406,411,412,413,414,415,416,417,421,422,428,431]"
             }
         ]
     },
     {
         "questionId": 3,
-        "question": "Is the response a information?",
+        "question": "Were Ressources send from the Server?",
         "examples": [
-            "The response is informing the client of a diffrerent protocol.",
-            "A request was made to a server that is currently waiting for a response from another server.",
-            "The response is a informational response indicating that the request was received and is being processed."
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 6,
+                "statusCodes": "[101,206,226,300]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 7,
+                "statusCodes": "[100,103,200,201,202,203,204,205,207,208,301,302,303,304,307,308,410]"
+            }
+        ]
+    },
+    {
+        "questionId": 4,
+        "question": "Is the Error a Authentication Error?",
+        "examples": [
+            "",
+            "",
+            ""
         ],
         "answers": [
             {
                 "answer": "Yes",
                 "nextQuestionId": 8,
-                "statusCodes": "[1]"
-            },
-            {
-                "answer": "Maybe",
-                "nextQuestionId": 9,
-                "statusCodes": "[202]"
+                "statusCodes": "[401,403,407,511]"
             },
             {
                 "answer": "No",
+                "nextQuestionId": 9,
+                "statusCodes": "[404,408,409,423,424,425,426,429,451,500,501,502,503,504,505,506,507,508,510]"
+            }
+        ]
+    },
+    {
+        "questionId": 5,
+        "question": "Was the Request correctly made?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 38,
+                "statusCodes": "[405,406,411,412,413,415,416,417,421,428]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 39,
+                "statusCodes": "[400,414,422,428,431]"
+            }
+        ]
+    },
+    {
+        "questionId": 6,
+        "question": "Is the Response a Information to change something?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
                 "nextQuestionId": 10,
-                "statusCodes": "[3]"
+                "statusCodes": "[101,300]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 11,
+                "statusCodes": "[206,226]"
+            }
+        ]
+    },
+    {
+        "questionId": 7,
+        "question": "Does the client need to do some kind of action after recieving the Response?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 14,
+                "statusCodes": "[103,301,302,303,307,308,410]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 15,
+                "statusCodes": "[100,200,201,202,203,204,205,207,208,304]"
+            }
+        ]
+    },
+    {
+        "questionId": 8,
+        "question": "Does the Client have the right to access the Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId":12,
+                "statusCodes": "[407,511]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 13,
+                "statusCodes": "[401,403]"
+            }
+        ]
+    },
+    {
+        "questionId": 9,
+        "question": "Was the Error caused by a User Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 21,
+                "statusCodes": "[404,409,423,424,425,426,429,451]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 22,
+                "statusCodes": "[408,500,501,502,503,504,505,506,507,508,510]"
+            }
+        ]
+    },
+    {
+        "questionId": 10,
+        "question": "Is the Information to change Protocols?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[101]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[300]"
+            }
+        ]
+    },
+    {
+        "questionId": 11,
+        "question": "Are only changes of a Ressource send?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[226]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[206]"
+            }
+        ]
+    },
+    {
+        "questionId": 12,
+        "question": "Is the Problem network related?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[407]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[511]"
+            }
+        ]
+    },
+    {
+        "questionId": 13,
+        "question": "Is some kind of Authentication provided?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[403]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[401]"
+            }
+        ]
+    },
+    {
+        "questionId": 14,
+        "question": "Is the Response a Redirect?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 16,
+                "statusCodes": "[301,302,303,307,308]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 17,
+                "statusCodes": "[103,410]"
+            }
+        ]
+    },
+    {
+        "questionId": 15,
+        "question": "Is the Request proceesed but the outcome is uncertain?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 50,
+                "statusCodes": "[100,202]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 51,
+                "statusCodes": "[200,201,203,204,205,207,208,304]"
+            }
+        ]
+    },
+    {
+        "questionId": 16,
+        "question": "Is the Redirect temporary?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 18,
+                "statusCodes": "[302,303,307]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 19,
+                "statusCodes": "[301,308]"
+            }
+        ]
+    },
+    {
+        "questionId": 17,
+        "question": "Shall the Client preload a Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[103]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[410]"
+            }
+        ]
+    },
+    {
+        "questionId": 18,
+        "question": "Is the Request a <code>GET</code> Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 20,
+                "statusCodes": "[302,303]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[307]"
+            }
+        ]
+    },
+    {
+        "questionId": 19,
+        "question": "Is the Request a <code>GET</code> Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[301]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[308]"
+            }
+        ]
+    },
+    {
+        "questionId": 20,
+        "question": "Shall the Client Reload a Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[303]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[302]"
+            }
+        ]
+    },
+    {
+        "questionId": 21,
+        "question": "Does the Ressource exist?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[404]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 32,
+                "statusCodes": "[409,423,424,425,426,429,451]"
+            }
+        ]
+    },
+    {
+        "questionId": 22,
+        "question": "Does the Problem relate to the Server directly?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 24,
+                "statusCodes": "[408,500,501,503,505,506,507,508,510]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 23,
+                "statusCodes": "[502,504]"
+            }
+        ]
+    },
+    {
+        "questionId": 23,
+        "question": "Did a Timeout occur?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[504]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[502]"
+            }
+        ]
+    },
+    {
+        "questionId": 24,
+        "question": "Is it a general Server Error?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[500]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 25,
+                "statusCodes": "[408,501,503,505,506,507,508,510]"
+            }
+        ]
+    },
+    {
+        "questionId": 25,
+        "question": "Is the Error temporary?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 26,
+                "statusCodes": "[408,503,507]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 27,
+                "statusCodes": "[501,505,506,508,510]"
+            }
+        ]
+    },
+    {
+        "questionId": 26,
+        "question": "Does the Error occur due to missing storage?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[507]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 30,
+                "statusCodes": "[408,503]"
+            }
+        ]
+    },
+    {
+        "questionId": 27,
+        "question": "Did the Error occur due to the content of the Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 28,
+                "statusCodes": "[505,506,510]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 29,
+                "statusCodes": "[501,508]"
+            }
+        ]
+    },
+    {
+        "questionId": 28,
+        "question": "Is the Response due to the Requirements?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 4,
+                "statusCodes": "[506,510]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[505]"
+            }
+        ]
+    },
+    {
+        "questionId": 29,
+        "question": "Is the Error due to a not implemented Feature?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[501]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[508]"
+            }
+        ]
+    },
+    {
+        "questionId": 30,
+        "question": "Is the Server overloaded?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[503]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[408]"
+            }
+        ]
+    },
+    {
+        "questionId": 31,
+        "question": "Is the Error due to missing Information in the Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[510]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[506]"
+            }
+        ]
+    },
+    {
+        "questionId": 32,
+        "question": "Is the Request rejected due to timing?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 33,
+                "statusCodes": "[425,429]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 34,
+                "statusCodes": "[409,423,424,426,451]"
+            }
+        ]
+    },
+    {
+        "questionId": 33,
+        "question": "Is the Request rejected due to Rate Limiting?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[429]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 5,
+                "statusCodes": "[425]"
+            }
+        ]
+    },
+    {
+        "questionId": 34,
+        "question": "Are there Conficts with the requested Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 35,
+                "statusCodes": "[409,423]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 36,
+                "statusCodes": "[424,426,451]"
+            }
+        ]
+    },
+    {
+        "questionId": 35,
+        "question": "Is the Ressource in Conflict with a other Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[409]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[423]"
+            }
+        ]
+    },
+    {
+        "questionId": 36,
+        "question": "Are there legal reasons for the Rejection?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[451]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 37,
+                "statusCodes": "[424,426]"
+            }
+        ]
+    },
+    {
+        "questionId": 37,
+        "question": "Is a Upgrade of the Protocol/Method required?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[426]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[424]"
+            }
+        ]
+    },
+    {
+        "questionId": 38,
+        "question": "Is the Request technically wrong?",
+        "examples": [
+            "Method, Header or Body wrong?",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 43,
+                "statusCodes": "[405,406,411,412,413,415,416,417]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[421]"
+            }
+        ]
+    },
+    {
+        "questionId": 39,
+        "question": "Is something to long in the Request?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 40,
+                "statusCodes": "[414,431]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 41,
+                "statusCodes": "[400,422,428]"
+            }
+        ]
+    },
+    {
+        "questionId": 40,
+        "question": "",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 4,
+                "statusCodes": "[]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 5,
+                "statusCodes": "[]"
+            }
+        ]
+    },
+    {
+        "questionId": 3,
+        "question": "",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 4,
+                "statusCodes": "[]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 5,
+                "statusCodes": "[]"
+            }
+        ]
+    },
+    {
+        "questionId": 3,
+        "question": "",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 4,
+                "statusCodes": "[]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 5,
+                "statusCodes": "[]"
+            }
+        ]
+    },
+
+    {
+        "questionId": 3,
+        "question": "",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 4,
+                "statusCodes": "[]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 5,
+                "statusCodes": "[]"
             }
         ]
     }
