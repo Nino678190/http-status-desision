@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://nino678190.github.io/http-status-desision/</loc>
+        <lastmod>2023-10-01</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nino678190.github.io/http-status-desision/library.html</loc>
+        <lastmod>2023-10-01</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nino678190.github.io/http-status-desision/favorites.html</loc>
+        <lastmod>2023-10-01</lastmod>
+        <priority>0.8</priority>
+    </url>
+</urlset>

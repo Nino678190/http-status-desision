@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /images/
+Disallow: /fonts/
+Disallow: /questions.excalidraw
+Disallow: /questions.md
+Disallow: /vercel.json
+Allow: /
+
+Sitemap: https://nino678190.github.io/http-status-desision/sitemap.xml
