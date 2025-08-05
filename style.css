@@ -301,6 +301,23 @@ code{
     color: #f1c40f;
 }
 
+.back-button{
+    width: fit-content;
+}
+
+.result-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.result-buttons>button {
+    width: fit-content;
+    background-color: #002a57;
+}
+
 @media screen and (max-width: 676px){
     .welcome-message{
         width: 100vw;

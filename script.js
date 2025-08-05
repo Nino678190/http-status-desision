@@ -196,6 +196,18 @@ async function loadQuestions(questionId) {
     }
     const container = document.createElement('section');
     container.classList.add('question-container');
+    let onclickYes = "";
+    let onclickNo = "";
+    if (questData.answers[0].nextQuestionId === null){
+        onclickYes = `displayResult(${questData.answers[0].statusCodes})`;
+    } else {
+        onclickYes = `loadQuestions(${questData.answers[0].nextQuestionId}); whichCodes(${questData.answers[0].statusCodes})`;
+    }
+    if (questData.answers[1].nextQuestionId === null){
+        onclickNo = `displayResult(${questData.answers[1].statusCodes})`;
+    } else {
+        onclickNo = `loadQuestions(${questData.answers[1].nextQuestionId}); whichCodes(${questData.answers[1].statusCodes})`;
+    }
     container.innerHTML = `
             <h2 id="question">${questData.question}</h2>
             <section class="question-description">
@@ -207,31 +219,60 @@ async function loadQuestions(questionId) {
                 </ul>
             </section>
             <nav>
-                <button class="answer green" onclick="loadQuestions(${questData.answers[0].nextQuestionId}); whichCodes(${questData.answers[0].statusCodes})">Yes</button>
-                <button class="answer yellow" onclick="loadQuestions(${questData.answers[1].nextQuestionId}); whichCodes(${questData.answers[1].statusCodes})">Maybe</button>
-                <button class="answer red" onclick="loadQuestions(${questData.answers[2].nextQuestionId}); whichCodes(${questData.answers[2].statusCodes})">No</button>
+                <button class="answer green" onclick="${onclickYes}">Yes</button>
+                <button class="answer red" onclick="${onclickNo}">No</button>
             </nav>
         `;
     document.querySelector('main').appendChild(container);
 }
 
-//* Overthink Display Result Function
-function displayResult(code1, code2 = null, code3 = null){
+async function displayResult(code1){
     const doc = document.querySelector('main');
     if (doc.querySelector('.question-container')) {
         doc.querySelector('.question-container').remove();
     }
-    const container = document.createElement('section');
+    const codes = await fetch('/codes.json').then(response => {
+        if (!response.ok) {
+            createToast('Failed to load status codes.', 'fail');
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+    }).catch(error => {
+        createToast('Error fetching status codes: ' + error.message, 'fail');
+        return null;
+    });
+    console.log(codes);
+    let description = '';
+    if (codes !== null) {
+        const codesArray = JSON.parse(codes);
+        console.log(codesArray);
+
+        const codeObject = codesArray.find(item => item.code === Number(code1));
+        console.log(codeObject);
+        if (!codeObject) {
+            createToast(`Status code ${code1} is not available for this path.`, 'fail');
+            return;
+        }
+        if (codeObject) {
+            description = codeObject.description;
+        } else {
+            createToast(`Description for status code ${code1} not found.`, 'fail');
+            return;
+        }
+    } else {
+        createToast('No status codes available for this path.', 'fail');
+        return;
+    }
+    const container = document.querySelector('.index');
     container.classList.add('result-container');
     container.innerHTML = `
-        <h2>Result</h2>
-        <p>Your HTTP status codes are:</p>
-        <ul>
-            <li class="status-code" onclick="window.location.href='library.html#${code1}'">${code1}</li>
-            ${code2 ? `<li class="status-code" onclick="window.location.href='library.html#${code2}'">${code2}</li>` : ''}
-            ${code3 ? `<li class="status-code" onclick="window.location.href='library.html#${code3}'">${code3}</li>` : ''}
-        </ul>
-        <button class="back-button" onclick="loadQuestions(0)">Back to Questions</button>
+        <h1>Result</h1>
+        <h2>${code1}</h2>
+        <p class="description">${description}</p>
+        <section class="result-buttons">
+            <button class="library-button" onclick="window.location.href='library.html#${code1}'">View in Library</button>
+            <button class="back-button" onclick="window.location.reload()">Back to Questions</button>
+        </section>
     `;
     doc.appendChild(container);
 
@@ -264,13 +305,5 @@ function whichCodes(codes) {
             possibleCodes.push(code);
         }
     });
-
-    if (possibleCodes.length === 0) {
-        createToast('No status codes available for this path.', 'info');
-        return;
-    }
-    if (possibleCodes.length === 1) {
-        displayResult(possibleCodes);
-    }
     localStorage.setItem('codes', JSON.stringify(possibleCodes));
 }

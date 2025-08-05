@@ -820,7 +820,7 @@
     },
     {
         "questionId": 40,
-        "question": "",
+        "question": "Is the Request Header to long?",
         "examples": [
             "",
             "",
@@ -829,19 +829,19 @@
         "answers": [
             {
                 "answer": "Yes",
-                "nextQuestionId": 4,
-                "statusCodes": "[]"
+                "nextQuestionId": null,
+                "statusCodes": "[431]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 5,
-                "statusCodes": "[]"
+                "nextQuestionId": null,
+                "statusCodes": "[414]"
             }
         ]
     },
     {
-        "questionId": 3,
-        "question": "",
+        "questionId": 41,
+        "question": "Is the Request rejected due to a missing Precondition?",
         "examples": [
             "",
             "",
@@ -850,19 +850,19 @@
         "answers": [
             {
                 "answer": "Yes",
-                "nextQuestionId": 4,
-                "statusCodes": "[]"
+                "nextQuestionId": null,
+                "statusCodes": "[428]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 5,
-                "statusCodes": "[]"
+                "nextQuestionId": 42,
+                "statusCodes": "[400,422]"
             }
         ]
     },
     {
-        "questionId": 3,
-        "question": "",
+        "questionId": 42,
+        "question": "Is it due to a wrong Format of the Information?",
         "examples": [
             "",
             "",
@@ -871,20 +871,20 @@
         "answers": [
             {
                 "answer": "Yes",
-                "nextQuestionId": 4,
-                "statusCodes": "[]"
+                "nextQuestionId": null,
+                "statusCodes": "[422]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 5,
-                "statusCodes": "[]"
+                "nextQuestionId": null,
+                "statusCodes": "[400]"
             }
         ]
     },
 
     {
-        "questionId": 3,
-        "question": "",
+        "questionId": 43,
+        "question": "Is the Error due to a wrong Header?",
         "examples": [
             "",
             "",
@@ -893,13 +893,306 @@
         "answers": [
             {
                 "answer": "Yes",
-                "nextQuestionId": 4,
-                "statusCodes": "[]"
+                "nextQuestionId": 44,
+                "statusCodes": "406,411,412,415,416,417]"
             },
             {
                 "answer": "No",
-                "nextQuestionId": 5,
-                "statusCodes": "[]"
+                "nextQuestionId": 45,
+                "statusCodes": "[405,413]"
+            }
+        ]
+    },
+    {
+        "questionId": 44,
+        "question": "Is the Error due to expectations?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 46,
+                "statusCodes": "[406,411,416,417]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 47,
+                "statusCodes": "[412,415]"
+            }
+        ]
+    },
+    {
+        "questionId": 45,
+        "question": "Is the Error due to the Method?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[405]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[413]"
+            }
+        ]
+    },{
+        "questionId": 46,
+        "question": "Is a Status Code expected, which can't be fullfilled?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[417]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 48,
+                "statusCodes": "[406,411,416]"
+            }
+        ]
+    },
+    {
+        "questionId": 47,
+        "question": "Is the Media Type not supported?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[415]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[412]"
+            }
+        ]
+    },
+    {
+        "questionId": 48,
+        "question": "Does the Client expect a certain Ressource/Part of a Ressource?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[416]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 49,
+                "statusCodes": "[406,411]"
+            }
+        ]
+    },
+    {
+        "questionId": 49,
+        "question": "Does the Server needs a Content Length Header?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[411]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[406]"
+            }
+        ]
+    },
+    {
+        "questionId": 50,
+        "question": "Does the Response contain a Body?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[202]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[100]"
+            }
+        ]
+    },
+    {
+        "questionId": 51,
+        "question": "Are multiple Status Code sent?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 52,
+                "statusCodes": "[207,208]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 53,
+                "statusCodes": "[200,201,203,204,205,304]"
+            }
+        ]
+    },
+    {
+        "questionId": 52,
+        "question": "Is the Status Code a Hint for multiple Ressources?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[207]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[208]"
+            }
+        ]
+    },
+    {
+        "questionId": 53,
+        "question": "Was a new Ressource created?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[201]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 54,
+                "statusCodes": "[200,203,204,205,304]"
+            }
+        ]
+    },
+    {
+        "questionId": 54,
+        "question": "Does the Response contain a Body?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": 55,
+                "statusCodes": "[200,304]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 56,
+                "statusCodes": "[203,204,205]"
+            }
+        ]
+    },
+    {
+        "questionId": 55,
+        "question": "Did the Content Change?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[200]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[304]"
+            }
+        ]
+    },
+    {
+        "questionId": 56,
+        "question": "Does the client need to do some kind of action after recieving the Response?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[205]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": 57,
+                "statusCodes": "[203,204]"
+            }
+        ]
+    },
+    {
+        "questionId": 57,
+        "question": "Does the Body contain some Information?",
+        "examples": [
+            "",
+            "",
+            ""
+        ],
+        "answers": [
+            {
+                "answer": "Yes",
+                "nextQuestionId": null,
+                "statusCodes": "[203]"
+            },
+            {
+                "answer": "No",
+                "nextQuestionId": null,
+                "statusCodes": "[204]"
             }
         ]
     }
