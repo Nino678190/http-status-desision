@@ -1,7 +1,7 @@
 [
     {
         "questionId": 1,
-        "question": "Did something negativ happen?",
+        "question": "Did something negative happen?",
         "examples": [
             "A user tried to access a resource that was not found.",
             "A request was made to a server that is currently unavailable.",
@@ -24,9 +24,9 @@
         "questionId": 2,
         "question": "Was the Request Valid?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request was well-formed and followed the expected structure.",
+            "The request contained all necessary headers and parameters.",
+            "The request used the correct HTTP method for the operation."
         ],
         "answers": [
             {
@@ -43,11 +43,11 @@
     },
     {
         "questionId": 3,
-        "question": "Were Ressources send from the Server?",
+        "question": "Were Resources sent from the Server?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server responded with the requested data.",
+            "The server provided a file download as part of the response.",
+            "The server returned a JSON object containing the requested information."
         ],
         "answers": [
             {
@@ -64,11 +64,11 @@
     },
     {
         "questionId": 4,
-        "question": "Is the Error a Authentication Error?",
+        "question": "Is the Error an Authentication Error?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client failed to provide valid credentials.",
+            "The server rejected the authentication token provided by the client.",
+            "The client attempted to access a restricted resource without logging in."
         ],
         "answers": [
             {
@@ -87,9 +87,9 @@
         "questionId": 5,
         "question": "Was the Request correctly made?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request was sent to the correct endpoint.",
+            "The request included all required parameters.",
+            "The request used the appropriate HTTP method."
         ],
         "answers": [
             {
@@ -106,11 +106,11 @@
     },
     {
         "questionId": 6,
-        "question": "Is the Response a Information to change something?",
+        "question": "Is the Response an Information to change something?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response indicates that the client should update its request.",
+            "The server suggests a change in the protocol or method.",
+            "The response provides instructions for modifying the request."
         ],
         "answers": [
             {
@@ -127,11 +127,11 @@
     },
     {
         "questionId": 7,
-        "question": "Does the client need to do some kind of action after recieving the Response?",
+        "question": "Does the client need to do some kind of action after receiving the Response?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client is required to follow a redirect.",
+            "The client must retry the request with different parameters.",
+            "The client needs to provide additional information to complete the request."
         ],
         "answers": [
             {
@@ -150,9 +150,9 @@
         "questionId": 8,
         "question": "Does the Client have the right to access the Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client provided valid authentication credentials.",
+            "The client is a member of the required user group.",
+            "The client has a valid subscription for the requested resource."
         ],
         "answers": [
             {
@@ -171,9 +171,9 @@
         "questionId": 9,
         "question": "Was the Error caused by a User Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The user requested a resource that does not exist.",
+            "The user provided invalid data in the request.",
+            "The user tried to access a forbidden resource."
         ],
         "answers": [
             {
@@ -192,9 +192,9 @@
         "questionId": 10,
         "question": "Is the Information to change Protocols?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server is indicating a protocol upgrade.",
+            "The response contains information about new API endpoints.",
+            "The response suggests using a different HTTP method."
         ],
         "answers": [
             {
@@ -213,9 +213,9 @@
         "questionId": 11,
         "question": "Are only changes of a Ressource send?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response contains only the modified fields of the resource.",
+            "The server sent a 204 No Content status indicating successful deletion.",
+            "The response includes an ETag header for cache validation."
         ],
         "answers": [
             {
@@ -234,9 +234,9 @@
         "questionId": 12,
         "question": "Is the Problem network related?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client is unable to reach the server.",
+            "There is a DNS resolution issue.",
+            "The network connection was reset."
         ],
         "answers": [
             {
@@ -255,9 +255,9 @@
         "questionId": 13,
         "question": "Is some kind of Authentication provided?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request includes a valid API key.",
+            "The request contains a Bearer token.",
+            "The request is signed with a valid HMAC."
         ],
         "answers": [
             {
@@ -276,9 +276,9 @@
         "questionId": 14,
         "question": "Is the Response a Redirect?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response status code is 301 Moved Permanently.",
+            "The response status code is 302 Found.",
+            "The response includes a Location header with the new URL."
         ],
         "answers": [
             {
@@ -295,11 +295,11 @@
     },
     {
         "questionId": 15,
-        "question": "Is the Request proceesed but the outcome is uncertain?",
+        "question": "Is the Request processed but the outcome is uncertain?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server is still processing the request.",
+            "The request has been queued for processing.",
+            "The request is being handled asynchronously."
         ],
         "answers": [
             {
@@ -318,9 +318,9 @@
         "questionId": 16,
         "question": "Is the Redirect temporary?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response status code is 302 Found.",
+            "The response status code is 307 Temporary Redirect.",
+            "The Location header points to a temporary URI."
         ],
         "answers": [
             {
@@ -339,9 +339,9 @@
         "questionId": 17,
         "question": "Shall the Client preload a Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a Link header with rel='preload'.",
+            "The server suggests preloading a specific resource.",
+            "The response contains an 'Accept-Ranges' header."
         ],
         "answers": [
             {
@@ -360,9 +360,9 @@
         "questionId": 18,
         "question": "Is the Request a <code>GET</code> Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request method is GET.",
+            "The request is asking for data retrieval.",
+            "The request does not have a body."
         ],
         "answers": [
             {
@@ -381,9 +381,9 @@
         "questionId": 19,
         "question": "Is the Request a <code>GET</code> Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request method is GET.",
+            "The request is asking for data retrieval.",
+            "The request does not have a body."
         ],
         "answers": [
             {
@@ -402,9 +402,9 @@
         "questionId": 20,
         "question": "Shall the Client Reload a Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a Cache-Control: no-cache header.",
+            "The response status code is 303 See Other.",
+            "The response suggests using a GET request to retrieve the resource."
         ],
         "answers": [
             {
@@ -423,9 +423,9 @@
         "questionId": 21,
         "question": "Does the Ressource exist?",
         "examples": [
-            "",
-            "",
-            ""
+            "The requested URL returns a 200 OK status.",
+            "The resource is found in the database.",
+            "The file exists on the server."
         ],
         "answers": [
             {
@@ -444,9 +444,9 @@
         "questionId": 22,
         "question": "Does the Problem relate to the Server directly?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server is down for maintenance.",
+            "The server encountered an unexpected condition.",
+            "The server is overloaded with requests."
         ],
         "answers": [
             {
@@ -465,9 +465,9 @@
         "questionId": 23,
         "question": "Did a Timeout occur?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server took too long to respond.",
+            "The request was canceled due to timeout settings.",
+            "The client did not receive a timely response from the server."
         ],
         "answers": [
             {
@@ -486,9 +486,9 @@
         "questionId": 24,
         "question": "Is it a general Server Error?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server encountered an internal error.",
+            "The server is misconfigured.",
+            "The server cannot fulfill the request due to a temporary overload."
         ],
         "answers": [
             {
@@ -507,9 +507,9 @@
         "questionId": 25,
         "question": "Is the Error temporary?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server is temporarily unable to handle the request.",
+            "The service is temporarily unavailable.",
+            "The server is undergoing maintenance."
         ],
         "answers": [
             {
@@ -528,9 +528,9 @@
         "questionId": 26,
         "question": "Does the Error occur due to missing storage?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server ran out of disk space while processing the request.",
+            "The server is unable to store the representation needed to complete the request.",
+            "The server does not have enough space to complete the request."
         ],
         "answers": [
             {
@@ -549,9 +549,9 @@
         "questionId": 27,
         "question": "Did the Error occur due to the content of the Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request body is too large.",
+            "The request contains invalid JSON.",
+            "The request exceeds the server's limit."
         ],
         "answers": [
             {
@@ -570,9 +570,9 @@
         "questionId": 28,
         "question": "Is the Response due to the Requirements?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response format does not match the client's expectations.",
+            "The response is missing required fields.",
+            "The response data is not in the expected structure."
         ],
         "answers": [
             {
@@ -591,9 +591,9 @@
         "questionId": 29,
         "question": "Is the Error due to a not implemented Feature?",
         "examples": [
-            "",
-            "",
-            ""
+            "The requested HTTP method is not supported by the server.",
+            "The requested resource does not support the desired action.",
+            "The server does not recognize the request protocol."
         ],
         "answers": [
             {
@@ -612,9 +612,9 @@
         "questionId": 30,
         "question": "Is the Server overloaded?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server is experiencing high traffic.",
+            "The server is taking too long to respond due to load.",
+            "The server cannot handle the request at the moment."
         ],
         "answers": [
             {
@@ -633,9 +633,9 @@
         "questionId": 31,
         "question": "Is the Error due to missing Information in the Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request is missing a required header.",
+            "The request does not include a necessary parameter.",
+            "The request lacks the information needed for processing."
         ],
         "answers": [
             {
@@ -654,9 +654,9 @@
         "questionId": 32,
         "question": "Is the Request rejected due to timing?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request was rejected because it was sent too early.",
+            "The request is out of the acceptable time window.",
+            "The request timing does not match the server's requirements."
         ],
         "answers": [
             {
@@ -675,9 +675,9 @@
         "questionId": 33,
         "question": "Is the Request rejected due to Rate Limiting?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client has sent too many requests in a given time frame.",
+            "The server is limiting the rate of requests from the client.",
+            "The client is temporarily blocked from making further requests."
         ],
         "answers": [
             {
@@ -694,11 +694,11 @@
     },
     {
         "questionId": 34,
-        "question": "Are there Conficts with the requested Ressource?",
+        "question": "Are there Conflicts with the requested Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request conflicts with an existing resource.",
+            "The request cannot be completed due to a conflict.",
+            "The resource is in a state that cannot process the request."
         ],
         "answers": [
             {
@@ -717,9 +717,9 @@
         "questionId": 35,
         "question": "Is the Ressource in Conflict with a other Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The resource ID conflicts with an existing resource.",
+            "The request would create a duplicate resource.",
+            "The resource cannot be updated due to a conflict with another resource."
         ],
         "answers": [
             {
@@ -738,9 +738,9 @@
         "questionId": 36,
         "question": "Are there legal reasons for the Rejection?",
         "examples": [
-            "",
-            "",
-            ""
+            "The requested resource is restricted by law.",
+            "The request violates legal regulations.",
+            "The server is prohibited from fulfilling the request due to legal reasons."
         ],
         "answers": [
             {
@@ -759,9 +759,9 @@
         "questionId": 37,
         "question": "Is a Upgrade of the Protocol/Method required?",
         "examples": [
-            "",
-            "",
-            ""
+            "The server requires an upgrade to a newer protocol version.",
+            "The requested method is no longer supported.",
+            "The client must upgrade to a more secure protocol."
         ],
         "answers": [
             {
@@ -781,8 +781,8 @@
         "question": "Is the Request technically wrong?",
         "examples": [
             "Method, Header or Body wrong?",
-            "",
-            ""
+            "The request uses an unsupported HTTP method.",
+            "The request syntax is not valid."
         ],
         "answers": [
             {
@@ -801,9 +801,9 @@
         "questionId": 39,
         "question": "Is something to long in the Request?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request URI is too long.",
+            "The request payload exceeds the server's limit.",
+            "The request headers are too large."
         ],
         "answers": [
             {
@@ -822,9 +822,9 @@
         "questionId": 40,
         "question": "Is the Request Header to long?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request contains too many headers.",
+            "The size of a header field exceeds the limit.",
+            "The request headers are collectively too large."
         ],
         "answers": [
             {
@@ -843,9 +843,9 @@
         "questionId": 41,
         "question": "Is the Request rejected due to a missing Precondition?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request is missing a required If-Match header.",
+            "The request does not include an If-None-Match header when required.",
+            "The request lacks the necessary preconditions for processing."
         ],
         "answers": [
             {
@@ -864,9 +864,9 @@
         "questionId": 42,
         "question": "Is it due to a wrong Format of the Information?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request body is not valid JSON.",
+            "The request parameters are not properly encoded.",
+            "The request does not conform to the expected format."
         ],
         "answers": [
             {
@@ -886,9 +886,9 @@
         "questionId": 43,
         "question": "Is the Error due to a wrong Header?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request contains an invalid Content-Type header.",
+            "The request has an incorrect Accept header.",
+            "The request includes a Header that is not allowed."
         ],
         "answers": [
             {
@@ -907,9 +907,9 @@
         "questionId": 44,
         "question": "Is the Error due to expectations?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request headers include an Expect header with an unfulfilled expectation.",
+            "The server cannot meet the expectations specified in the request.",
+            "The request includes a header that the server does not understand."
         ],
         "answers": [
             {
@@ -928,9 +928,9 @@
         "questionId": 45,
         "question": "Is the Error due to the Method?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request uses a deprecated HTTP method.",
+            "The request method is not allowed for the requested resource.",
+            "The server does not support the requested HTTP method."
         ],
         "answers": [
             {
@@ -946,11 +946,11 @@
         ]
     },{
         "questionId": 46,
-        "question": "Is a Status Code expected, which can't be fullfilled?",
+        "question": "Is a Status Code expected, which can't be fulfilled?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client expects a 100 Continue status but the server cannot comply.",
+            "The client expects a 417 Expectation Failed status.",
+            "The server cannot meet the expectations specified in the request headers."
         ],
         "answers": [
             {
@@ -969,9 +969,9 @@
         "questionId": 47,
         "question": "Is the Media Type not supported?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request Content-Type is not supported by the server.",
+            "The requested media type is not allowed.",
+            "The server cannot process the media type of the request."
         ],
         "answers": [
             {
@@ -990,9 +990,9 @@
         "questionId": 48,
         "question": "Does the Client expect a certain Ressource/Part of a Ressource?",
         "examples": [
-            "",
-            "",
-            ""
+            "The client requests a specific range of bytes.",
+            "The client expects a particular representation of the resource.",
+            "The client is using content negotiation to request a specific format."
         ],
         "answers": [
             {
@@ -1011,9 +1011,9 @@
         "questionId": 49,
         "question": "Does the Server needs a Content Length Header?",
         "examples": [
-            "",
-            "",
-            ""
+            "The request must include a Content-Length header to specify the size of the body.",
+            "The server requires a Content-Length header for processing the request.",
+            "The request is missing a Content-Length header when it is required."
         ],
         "answers": [
             {
@@ -1032,9 +1032,9 @@
         "questionId": 50,
         "question": "Does the Response contain a Body?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a message body with the requested data.",
+            "The response contains a JSON object with the result.",
+            "The response body is empty for a 204 No Content status."
         ],
         "answers": [
             {
@@ -1053,9 +1053,9 @@
         "questionId": 51,
         "question": "Are multiple Status Code sent?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a 207 Multi-Status for a batch request.",
+            "The response contains multiple status codes for different operations.",
+            "The response indicates partial success with multiple status codes."
         ],
         "answers": [
             {
@@ -1074,9 +1074,9 @@
         "questionId": 52,
         "question": "Is the Status Code a Hint for multiple Ressources?",
         "examples": [
-            "",
-            "",
-            ""
+            "The status code 207 indicates that multiple resources are affected.",
+            "The response suggests that the client should check multiple locations.",
+            "The status code implies that the result pertains to more than one resource."
         ],
         "answers": [
             {
@@ -1095,9 +1095,9 @@
         "questionId": 53,
         "question": "Was a new Ressource created?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response status code is 201 Created.",
+            "The response includes a Location header with the URL of the new resource.",
+            "The response body contains the ID of the newly created resource."
         ],
         "answers": [
             {
@@ -1116,9 +1116,9 @@
         "questionId": 54,
         "question": "Does the Response contain a Body?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a message body with the requested data.",
+            "The response contains a JSON object with the result.",
+            "The response body is empty for a 204 No Content status."
         ],
         "answers": [
             {
@@ -1137,9 +1137,9 @@
         "questionId": 55,
         "question": "Did the Content Change?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response body contains new data.",
+            "The resource has been updated with new information.",
+            "The response indicates that the content has been modified."
         ],
         "answers": [
             {
@@ -1158,9 +1158,9 @@
         "questionId": 56,
         "question": "Does the client need to do some kind of action after recieving the Response?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response includes a message body with instructions.",
+            "The client needs to update its cached data.",
+            "The client must notify the user about the changes."
         ],
         "answers": [
             {
@@ -1179,9 +1179,9 @@
         "questionId": 57,
         "question": "Does the Body contain some Information?",
         "examples": [
-            "",
-            "",
-            ""
+            "The response body contains a success message.",
+            "The body of the response includes the requested data.",
+            "The response body is empty for a 204 No Content status."
         ],
         "answers": [
             {
